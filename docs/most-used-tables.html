@@ -5,32 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Data Team Manifesto." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="Data Team Manifesto." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="Data Team Manifesto." />
   
 
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-11-29" />
+<meta name="date" content="2021-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -203,6 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="major-projects.html"><a href="major-projects.html#driver-utilization-data"><i class="fa fa-check"></i><b>8.3</b> Driver Utilization data</a></li>
 <li class="chapter" data-level="8.4" data-path="major-projects.html"><a href="major-projects.html#tlc-data-hub"><i class="fa fa-check"></i><b>8.4</b> TLC Data Hub</a></li>
 <li class="chapter" data-level="8.5" data-path="major-projects.html"><a href="major-projects.html#raw-trip-records-publishing"><i class="fa fa-check"></i><b>8.5</b> Raw Trip Records publishing</a></li>
+<li class="chapter" data-level="8.6" data-path="major-projects.html"><a href="major-projects.html#recurring-tasks-ex"><i class="fa fa-check"></i><b>8.6</b> <img src="my_files/recurring_tasks.png" alt="Recurring tasks ex" /></a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>9</b> Useful Code Snippets &amp; Tricks</a></li>
 <li class="divider"></li>
@@ -344,11 +339,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tlc-datawarehouse" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> TLC Datawarehouse</h2>
 <p>The Data Team, collaborating with IT, built out a data warehouse that automatically aggregates on a set schedule the most often requested data points, drastically increasing the speed with which data can be pulled and analyzed. Most tables in the warehouse update automatically and run on a set schedule. Standard workflow of creating a new table is as follows:</p>
+<div class="infobox important">
 <ul>
 <li><p>Create a new table with some initial data straight from the SSMS, Python, or R.</p></li>
 <li><p>Create a Stored Procedure script. The goal of that script is to update the table that you created.</p></li>
 <li><p>Create a Job in the SSMS job scheduler. That job will run the Stored Procedure that you created in the step 2 on schedule that you specify.</p></li>
 </ul>
+</div>
 <p><strong>Datawarehouse SSMS view:</strong></p>
 <div class="figure">
 <img src="my_files/dw1.PNG" alt="" />
@@ -485,6 +482,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb23-7"><a href="most-used-tables.html#cb23-7" aria-hidden="true" tabindex="-1"></a>      ,[pct_utilization]</span>
 <span id="cb23-8"><a href="most-used-tables.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[company_indicators_weekly_utilization_even]</span></code></pre></div>
 <p>This section will be developed more in the future.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </div>
 </div>
             </section>

@@ -5,32 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Data Connections &amp; Access | Data Analytics &amp; Engineering Team Manual</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Data Team Manifesto." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Data Connections &amp; Access | Data Analytics &amp; Engineering Team Manual" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="Data Team Manifesto." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Data Connections &amp; Access | Data Analytics &amp; Engineering Team Manual" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="Data Team Manifesto." />
   
 
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-11-29" />
+<meta name="date" content="2021-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -203,6 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="major-projects.html"><a href="major-projects.html#driver-utilization-data"><i class="fa fa-check"></i><b>8.3</b> Driver Utilization data</a></li>
 <li class="chapter" data-level="8.4" data-path="major-projects.html"><a href="major-projects.html#tlc-data-hub"><i class="fa fa-check"></i><b>8.4</b> TLC Data Hub</a></li>
 <li class="chapter" data-level="8.5" data-path="major-projects.html"><a href="major-projects.html#raw-trip-records-publishing"><i class="fa fa-check"></i><b>8.5</b> Raw Trip Records publishing</a></li>
+<li class="chapter" data-level="8.6" data-path="major-projects.html"><a href="major-projects.html#recurring-tasks-ex"><i class="fa fa-check"></i><b>8.6</b> <img src="my_files/recurring_tasks.png" alt="Recurring tasks ex" /></a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>9</b> Useful Code Snippets &amp; Tricks</a></li>
 <li class="divider"></li>
@@ -241,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There area series of databases which we use to collect data. Access to these servers is restricted by your windows profile and a ticket with IT is required to access the database, but talk to your supervisor first to see if there are accessible points already in place before approaching IT.
 below are some credentials provided for a few databases:</p>
 <table style="width:100%;">
-<caption><span id="tab:unnamed-chunk-2">Table 4.1: </span>ODBC Connections</caption>
+<caption><span id="tab:unnamed-chunk-3">Table 4.1: </span>ODBC Connections</caption>
 <colgroup>
 <col width="20%" />
 <col width="26%" />
@@ -325,7 +320,9 @@ below are some credentials provided for a few databases:</p>
 <div id="proxy-settings" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Proxy Settings</h2>
 <p>At some point you might encounter a proxy problem. That is basically a firewall blocking certain connections from outside. Unfortunately, everything that has to do with installing python or javascript packages is considered undesirable by our firewall and ultimately will be blocked. That is a very annoying issue to deal with for anybody. Fortunately, there is a solution. For most tasks, adding the following proxy settings will fix the problem.</p>
+<div class="infobox note">
 <p><strong>Open Anaconda -&gt; file -&gt; preferences -&gt; configure Conda</strong>. Paste the following in there (use your username):</p>
+</div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-connections-access.html#cb3-1" aria-hidden="true" tabindex="-1"></a>channels<span class="sc">:</span></span>
 <span id="cb3-2"><a href="data-connections-access.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> defaults</span>
 <span id="cb3-3"><a href="data-connections-access.html#cb3-3" aria-hidden="true" tabindex="-1"></a>proxy_servers<span class="sc">:</span></span>
@@ -367,6 +364,8 @@ below are some credentials provided for a few databases:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-connections-access.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># npm config set proxy http://bcpxy.nycnet:8080</span></span>
 <span id="cb5-2"><a href="data-connections-access.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># npm config set https-proxy http://bcpxy.nycnet:8080</span></span></code></pre></div>
 <p>If none of this helps, contact either Nikita Voevodin or Jordan Mamet from IT.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </div>
 </div>
             </section>
