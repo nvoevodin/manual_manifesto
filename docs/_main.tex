@@ -1,0 +1,1486 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Data Analytics \& Engineering Team Manual},
+  pdfauthor={Nikita Voevodin: Senior Data Engineer},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Data Analytics \& Engineering Team Manual}
+\author{Nikita Voevodin: Senior Data Engineer}
+\date{2021-11-29}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{scope}{%
+\chapter{Scope}\label{scope}}
+
+The New York City Taxi and Limousine Commission (TLC) is the City agency responsible for regulating for-hire transportation in New York City, including taxis, street hail liveries, high-volume for-hire services such as Uber and Lyft, black cars, luxury limousines, livery vehicles, commuter vans, and paratransit vehicles. The TLC licenses about 175,000 drivers, 115,000 vehicles, and 1,000 businesses, which together transport more than a million passengers a day, making TLC the most active for-hire transportation regulatory agency in the world with oversight of a key component of the City's transportation network. With the introduction of new apps and technologies, TLC is on the front lines of a rapidly changing mobility landscape and our innovative efforts--whether regulating driver pay, ensuring wheelchair accessibility, working to eliminate traffic fatalities, or preventing discriminatory service--often serve as a model for other cities.
+
+The purpose of this document is to document practices, procedures and processes of analysis and work at the Taxi and Limousine Commission (TLC) with a focus on the Analytics Unit. This will be an evolving document meant to be shared with current and incoming staff, in order to maintain and capture all knowledge relevant to completing work at the TLC. In addition to laying the groundwork for standards, it will serve as a living document of the vision and strategy employed by the analytics team to serve the constituency with data driven decisions and support for policy research. The vision for the analytics team is to create a highly effective rapid-prototyping research element within TLC that will serve to do the following (examples provided below each point):
+
+\begin{itemize}
+\item
+  \textbf{Provide policy research support}
+
+  \begin{itemize}
+  \item
+    Medallion Relief Program
+  \item
+    Black Car and Livery Task Force and Report
+  \item
+    Regulatory Review
+  \item
+    Battery Electric Vehicle Pilot Program
+  \item
+    Driver income study analytics support
+  \item
+    Vehicle retirement adjustment
+  \end{itemize}
+\item
+  \textbf{Maintain automated metrics and KPI's for rapid access internally and externally}
+
+  \begin{itemize}
+  \item
+    Respond to internal and external data requests
+  \item
+    Open data support
+  \end{itemize}
+\item
+  \textbf{Rapid prototype applications and analytical processes}
+
+  \begin{itemize}
+  \item
+    Testing new technologies for integration with IT \& the taxi industry
+  \item
+    Maintaing and imporving existing solutions like TLC Data Hub
+  \item
+    Creating new tools for internal and external users
+  \end{itemize}
+\item
+  \textbf{Modernize data infrastructure}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Working towards speeding up data processes with technologies like SQL Server Datawarehousing/Apache Spark
+  \end{itemize}
+\item
+  \textbf{Engage with the public}
+
+  \begin{itemize}
+  \item
+    Publish innovative research on For-Hire industry
+  \item
+    Partnering with academia and think thanks
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{the-team}{%
+\chapter{The Team}\label{the-team}}
+
+The analytics team in its current form consists of the Senior Data Engineer (Unit Head), a Data Engineer, a Data Analyst, and a College Aide. The team's primary focus is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Production of KPI's \& metrics relevant to the industry}
+\item
+  \textbf{Rapid prototyping of algorithms and analytical tools}
+\item
+  \textbf{Data exploration and analysis}
+\end{enumerate}
+
+The chain of command is as follows:
+
+\textbf{AC Data \& Tech -\textgreater{} Sr.Data Engineer -\textgreater{} Data Engineer, Data Analyst, College Aide}
+
+\textbf{TBD -\textgreater{} Nikita Voevodin -\textgreater{} TBD, TBD, Phillip Wong}
+
+When the Sr.~Data Engineer is not present, the TBD will be in charge. All employees ultimately answer to the Assistant Commissioner of Data and technology. The current team members are:
+
+\begin{longtable}[t]{ll}
+\caption{\label{tab:unnamed-chunk-1}Team}\\
+\toprule
+Name & Title\\
+\midrule
+TBD & Assistant Commissioner of Data \& Technology\\
+Nikita Voevodin & Sr.Data Engineer\\
+TBD & Data Engineer\\
+TBD & Data Analyst\\
+TBD & Data Analyst\\
+\addlinespace
+Phillip Wong & College Aide\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{workflow}{%
+\chapter{Workflow}\label{workflow}}
+
+\hypertarget{establishing-a-data-science-environment}{%
+\section{Establishing a Data Science Environment}\label{establishing-a-data-science-environment}}
+
+Each analyst operates in their own way however the following setups should be followed in order to leverage collaboration across the team:
+
+\begin{itemize}
+\item
+  \textbf{Install R, Rstudio \& adjacent tools}
+
+  \begin{itemize}
+  \item
+    R Base
+  \item
+    Rstudio
+  \end{itemize}
+\item
+  \textbf{Install Python 3.xxx}
+
+  \begin{itemize}
+  \item
+    Anaconda
+  \item
+    Set proxies
+  \end{itemize}
+\item
+  \textbf{SQL Server Management Studio}
+\item
+  \textbf{ArcGIS or QGIS (if needed)}
+\item
+  \textbf{Git}
+\item
+  \textbf{NPM}
+\end{itemize}
+
+\hypertarget{professional-development}{%
+\section{Professional Development}\label{professional-development}}
+
+Each analyst has tools available to them for improving their data skillset:
+
+\begin{itemize}
+\item
+  \textbf{DataCamp}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    TLC maintains a subscription to datacamp for R, Python and more; for membership access speak to your supervisor
+  \end{itemize}
+\item
+  \textbf{FreeCodeCamp}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    An excellent free course for learning html, css and javascript
+  \end{itemize}
+\item
+  \textbf{StackOverflow}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Is your friend if you are stuck
+  \end{itemize}
+\item
+  \textbf{YouTube}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Most things you can learn there
+  \end{itemize}
+\item
+  \textbf{R, Not the best practices}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    90\% of the R code related stuff that you will be doing at TLC is covered there
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{metrics-analytics-automation}{%
+\section{Metrics, Analytics \& Automation}\label{metrics-analytics-automation}}
+
+\textbf{Important:} Moving forward we will focus on automating our work as best as possible. We already do for the most part. The general process:
+
+\textbf{Create a script} -\textgreater{} \textbf{Output a result} -\textgreater{} \textbf{Automate the script to run on schedule} -\textgreater{} \textbf{document (the what, the how, the when, and the why)}
+
+\textbf{Note:} Automation is a judgement call and should be considered the default. If things are ad hoc or to custom based to automate then note that in the documentation. The rule of thumb is: automate when there is a temporal element since this generally means someone will ask for this again.
+
+All final reports and analyses should go under the directory below unless otherwise directed:
+
+I:/COF/COF/\emph{DA\&E}/your\_name\ldots{}
+
+This folder holds in it other subdirectories which various output files like images, excel documents and other relevant data. The general structure analysts on the analytics team should follow are:
+
+\begin{itemize}
+\item
+  Unless otherwise directed, create a folder in your folder and label it with topic words of the project you are working on
+\item
+  In that root folder insert your main script, cache any data files in subdirectories, and provide a documentation file. Below is an example:
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{my_files/folder_ex.png}
+\caption{Folder Example}
+\end{figure}
+
+Note that in the folder we have output files, the main script, and an html report which is meant to help aid in presenting the work. The automate script leverages the taskcheduleR package in R to make the script run every month, this way utilization rates for medallions and shls are updated automatically.
+
+\hypertarget{dashboards-apps}{%
+\section{Dashboards \& Apps}\label{dashboards-apps}}
+
+Currently we are working on standardizing our analyses as best as possible in order to allow for quick servicing of both routine and some ad-hoc requests. As tools become more streamlined we will be able to expand with internal dashboarding tools; at the moment limitation in licensing tools and opensource software acceptance has hindered our ability to use these. Tools which we currently use for dashboarding are:
+
+\begin{itemize}
+\item
+  \textbf{Dashboards}
+
+  \begin{itemize}
+  \item
+    Shiny R
+  \item
+    PowerBI
+  \end{itemize}
+\item
+  \textbf{Apps}
+
+  \begin{itemize}
+  \item
+    Shiny R
+  \item
+    ReactJS
+  \item
+    React Native
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{passwords-usernames-accounts}{%
+\section{Passwords, Usernames, Accounts}\label{passwords-usernames-accounts}}
+
+TBD
+
+\hypertarget{data-connections-access}{%
+\chapter{Data Connections \& Access}\label{data-connections-access}}
+
+\hypertarget{sql-server}{%
+\section{SQL Server}\label{sql-server}}
+
+Our primary data source is the sql server which holds a myriad of data bases each with their own sets of tables accessible through different tools. Currently the teams lean heavily on 3 of the following tools for accessing data from the server:
+
+\begin{itemize}
+\item
+  \textbf{Sql server management studio}
+\item
+  \textbf{R}
+\item
+  \textbf{Python}
+\end{itemize}
+
+\hypertarget{pertinent-it-databases}{%
+\section{Pertinent IT Databases}\label{pertinent-it-databases}}
+
+There area series of databases which we use to collect data. Access to these servers is restricted by your windows profile and a ticket with IT is required to access the database, but talk to your supervisor first to see if there are accessible points already in place before approaching IT.
+below are some credentials provided for a few databases:
+
+\begin{longtable}[t]{llll}
+\caption{\label{tab:unnamed-chunk-2}ODBC Connections}\\
+\toprule
+Database & Driver & Server & Credentials\\
+\midrule
+DataWarehouse & odbc driver 17 for sql server & TLCBDWH & request from IT\\
+Azure\_Trip\_Data & odbc driver 17 for sql server & tlcsqlmi01.fa986d691ca7.database.windows.net & request from IT\\
+APPLUS & sql server & 10.224.244.114 & request from IT\\
+TLC\_Policy\_Programs\_Dev & odbc driver 17 for sql server & msdwvd-tlctxy01.csc.nycnet & request from IT\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{open-data-database}{%
+\section{Open Data Database}\label{open-data-database}}
+
+Before we submit data to the city Open Data portal, we store it in the Open Data sql server. If you ever need access to it, contact Nikita Voevodin or Maxim Smolyaninov from IT.
+
+\hypertarget{open-data}{%
+\section{Open Data}\label{open-data}}
+
+City agencies that work with data are often required to post their data to the city open data portal. It can be very useful to know how to pull data from there. Even for our own data, because different departments publish different datasets, which might not be shared between departments. You can either download the whole datasets as csv, json, or whatever, or you can use their API. They have useful code snippets of how to work with their data in different programming languages. The first thing that you should do though is set up an account and get an api key. Then, you can do somethig like:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(RSocrata)}
+
+\NormalTok{date }\OtherTok{\textless{}{-}} \FunctionTok{Sys.Date}\NormalTok{()}
+
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{read.socrata}\NormalTok{(}
+  \FunctionTok{paste0}\NormalTok{(}\StringTok{"https://data.cityofnewyork.us/resource/rhe8{-}mgbb.json?last\_updated\_date="}\NormalTok{,date,}\StringTok{""}\NormalTok{),}
+  \AttributeTok{app\_token =} \StringTok{"yourtokenhere"}\NormalTok{,}
+  \AttributeTok{email     =} \StringTok{"yourcreds"}\NormalTok{,}
+  \AttributeTok{password  =} \StringTok{"yourcreds"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Python:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{from sodapy import Socrata;}
+\NormalTok{import pandas as pd;}
+
+\NormalTok{client }\OtherTok{=} \FunctionTok{Socrata}\NormalTok{(}\StringTok{"data.cityofnewyork.us"}\NormalTok{,}
+                 \StringTok{"token"}\NormalTok{,}
+                 \AttributeTok{username=}\StringTok{"yourcreds"}\NormalTok{,}
+                 \AttributeTok{password=}\StringTok{"yourcreds"}\NormalTok{)}
+
+\NormalTok{today }\OtherTok{=} \FunctionTok{date.today}\NormalTok{()}
+
+\NormalTok{results }\OtherTok{=} \FunctionTok{client.get}\NormalTok{(}\StringTok{"rhe8{-}mgbb"}\NormalTok{, }\AttributeTok{limit =} \DecValTok{20000}\NormalTok{, }\AttributeTok{last\_updated\_date=}\NormalTok{today)}
+
+\CommentTok{\# Convert to pandas DataFrame}
+\NormalTok{results\_df }\OtherTok{=} \FunctionTok{pd.DataFrame.from\_records}\NormalTok{(results) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{proxy-settings}{%
+\section{Proxy Settings}\label{proxy-settings}}
+
+At some point you might encounter a proxy problem. That is basically a firewall blocking certain connections from outside. Unfortunately, everything that has to do with installing python or javascript packages is considered undesirable by our firewall and ultimately will be blocked. That is a very annoying issue to deal with for anybody. Fortunately, there is a solution. For most tasks, adding the following proxy settings will fix the problem.
+
+\textbf{Open Anaconda -\textgreater{} file -\textgreater{} preferences -\textgreater{} configure Conda}. Paste the following in there (use your username):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{channels}\SpecialCharTok{:}
+  \SpecialCharTok{{-}}\NormalTok{ defaults}
+\NormalTok{proxy\_servers}\SpecialCharTok{:}
+\NormalTok{  http}\SpecialCharTok{:}\NormalTok{ http}\SpecialCharTok{:}\ErrorTok{//}\NormalTok{csc\textbackslash{}yourusername}\SpecialCharTok{@}\DecValTok{10}\NormalTok{.}\DecValTok{155}\NormalTok{.}\FloatTok{126.15}\SpecialCharTok{:}\DecValTok{8080}
+\NormalTok{  https}\SpecialCharTok{:}\NormalTok{ http}\SpecialCharTok{:}\ErrorTok{//}\NormalTok{csc\textbackslash{}yourusername}\SpecialCharTok{@}\DecValTok{10}\NormalTok{.}\DecValTok{155}\NormalTok{.}\FloatTok{126.15}\SpecialCharTok{:}\DecValTok{8080}
+
+\NormalTok{ssl\_verify}\SpecialCharTok{:}\NormalTok{ false}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{my_files/proxy.png}
+\caption{Proxy Settings}
+\end{figure}
+
+Here are the settings for other languages and systems:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Linux}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Use the following syntax to configure the proxy for http, https and ftp traffic on the Linux }
+\CommentTok{\#command line :}
+
+\CommentTok{\# export http\_proxy="http://bcpxy.nycnet:8080"}
+\CommentTok{\# export https\_proxy="https://bcpxy.nycnet:8080"}
+\CommentTok{\# export ftp\_proxy="http://bcpxy.nycnet:8080"}
+
+\SpecialCharTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\#Use the following syntax if the proxy server requires authentication :}
+
+\CommentTok{\# export http\_proxy="http://user:password@bcpxy.nycnet:8080"}
+\CommentTok{\# export https\_proxy="https://user:password@bcpxy.nycnet:8080"}
+\CommentTok{\# export ftp\_proxy="http://user:password@bcpxy.nycnet:8080"}
+
+\SpecialCharTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\#Using your email address username\%40agency.nyc.gov}
+
+\CommentTok{\# export http\_proxy="http://username\%40agency.nyc.gov:\textless{}password\textgreater{}@bcpxy.nycnet:8080"}
+\CommentTok{\# export https\_proxy=https://username\%40agency.nyc.gov:\textless{}password\textgreater{}@bcpxy.nycnet:8080}
+\CommentTok{\# export ftp\_proxy=http://username\%40agency.nyc.gov:\textless{}password\textgreater{}@bcpxy.nycnet:8080}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{NPM}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# npm config set proxy http://bcpxy.nycnet:8080}
+\CommentTok{\# npm config set https{-}proxy http://bcpxy.nycnet:8080}
+\end{Highlighting}
+\end{Shaded}
+
+If none of this helps, contact either Nikita Voevodin or Jordan Mamet from IT.
+
+\hypertarget{tasks-checkups}{%
+\chapter{Tasks \& CheckUps}\label{tasks-checkups}}
+
+There are 4 types of tasks:
+
+\begin{itemize}
+\item
+  \textbf{Major project where the whole team works together}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    These tasks usually have scopes, timelines, and are well documented and articulated.
+  \end{itemize}
+\item
+  \textbf{Pull requests and adhoc things}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You supervisor would usually assign and oversee those. They are usually data requests from the leadership, other departments, or outside of the agency. They are usually less documented and deadlines depend on where it came from.
+  \end{itemize}
+\item
+  \textbf{Requests that went around your supervisor and straight to you}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If it is from a supervisor of your supervisor, just do it. If it is from other department, prioritize it based on your availability and the nature of the request. If it is from outside of the agency, definitely notify your supervisor. In most cases though, it is up to you as long as the priority tasks are getting done.
+  \end{itemize}
+\item
+  \textbf{Your own initiatives}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You absolutely encouraged to have initiatives of your own. Especially, if they can benefit the agency and your growth. Most of the valuable agency projects start as small initiatives. Your supervisor will support your initiative in 99\% cases.
+  \end{itemize}
+\end{itemize}
+
+\leavevmode\hypertarget{hello}{}%
+We have a Trackit system in place. Some other departments will require you to officially submit your requests through that. You can do that too, but I would advice against that as it creates an impressions that you are unwilling to help or cooperate. It is your call however.
+
+\hypertarget{trello}{%
+\section{Trello}\label{trello}}
+
+There is a bunch of ways to track your own projects and you are free to use what works for you. I will try to stick with Trello task management software to assign and track tasks. It is free and convenient. Give it a shot.
+
+\begin{figure}
+\centering
+\includegraphics{my_files/trello.png}
+\caption{Trello ex}
+\end{figure}
+
+\hypertarget{weekly-meetings}{%
+\section{Weekly Meetings}\label{weekly-meetings}}
+
+Your supervisor will place a weekly meeting on your calendar. During that (informal) meeting you can update them on how things are going, your ideas, concerns, etc. You can obviously reach out to your supervisor for guidance at any point on any other day.
+
+\hypertarget{evaluations}{%
+\section{Evaluations}\label{evaluations}}
+
+Performance evaluations will be given once every six months, once in January and again in June. Whichever is closest to the start time of the employee, so long as the time is not three months or less. This will give an employee a minimum of three months to get settled in so a baseline can be determined.
+
+\hypertarget{other-teams-contacts}{%
+\chapter{Other Teams \& Contacts}\label{other-teams-contacts}}
+
+The TLC licenses about 175,000 drivers, 115,000 vehicles, and 1,000 businesses, which together transport more than a million passengers a day, making TLC the most active for-hire transportation regulatory agency in the world with oversight of a key component of the City's transportation network. To do all that we obviously need people and space. We have 3 main offices in NYC. Below, I would like to list the teams and contacts that might be relevant to our work here. It might not be complete as i do not know everybody at TLC, so if you are reading this and thinking that you should be here, email me at voevodinn with relevant info.
+
+\begin{itemize}
+\item
+  \textbf{Beaver Street (Head Office)}
+\item
+  \textbf{LIC (Licensing and Court)}
+\item
+  \textbf{Queens (Inspection and Enforcement)}
+\end{itemize}
+
+\hypertarget{beaver}{%
+\section{Beaver}\label{beaver}}
+
+TLC head office. Most of the decision-making happens here. TLC Commissioner's office, IT, HR, PR, Legal, Policy, Education, External Affairs, Programs and other admin staff are all located at Beaver. Here are some useful contacts for you (always in works):
+
+\hypertarget{data-analytics-engineering}{%
+\subsection{Data Analytics \& Engineering}\label{data-analytics-engineering}}
+
+\begin{itemize}
+\tightlist
+\item
+  Nikita Voevodin
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Senior Data Engineer (Unit Head)
+  \item
+    email voevodinn@
+  \item
+    ext 1195
+  \item
+    ask me about: trip data, our tech, programming, data projects
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{policy}{%
+\subsection{Policy}\label{policy}}
+
+\begin{itemize}
+\tightlist
+\item
+  James DiGiovanni
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Executive Director
+  \item
+    email digiovannij@
+  \item
+    ext \ldots{}
+  \item
+    ask me about: \ldots{}
+  \end{itemize}
+\item
+  Ted Metz
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Policy Analyst
+  \item
+    email metzt@
+  \item
+    ext \ldots{}
+  \item
+    ask me about: \ldots{}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{programs}{%
+\subsection{Programs}\label{programs}}
+
+\hypertarget{it-data}{%
+\subsection{IT (DATA)}\label{it-data}}
+
+\hypertarget{legal}{%
+\subsection{Legal}\label{legal}}
+
+\hypertarget{pr}{%
+\subsection{PR}\label{pr}}
+
+\hypertarget{external-affairs}{%
+\subsection{External Affairs}\label{external-affairs}}
+
+\hypertarget{hr}{%
+\subsection{HR}\label{hr}}
+
+\hypertarget{lic-licensing-and-courts}{%
+\section{LIC (Licensing and Courts)}\label{lic-licensing-and-courts}}
+
+This office processes drivers. Our prosecution and another analytics teams are located there. They deal with with a lot of interesting questions and data and hold a lot of institutional knowledge.
+
+\hypertarget{data-analytics}{%
+\subsection{Data Analytics}\label{data-analytics}}
+
+\begin{itemize}
+\tightlist
+\item
+  Adrian Chamorro
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Data Engineer
+  \item
+    email chamorroa@
+  \item
+    ext \ldots{}
+  \item
+    ask me about: \ldots{}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{prosecution}{%
+\subsection{Prosecution}\label{prosecution}}
+
+\begin{itemize}
+\tightlist
+\item
+  Serge Router
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Prosecution Data Support Unit
+  \item
+    email Routers@
+  \item
+    ext \ldots{}
+  \item
+    ask me about: \ldots{}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{queens-inspection-and-enforcement}{%
+\section{Queens (Inspection and Enforcement)}\label{queens-inspection-and-enforcement}}
+
+This office inspects and processes vehicles. Our police and another analytics teams are located there. Inspection data is super useful and we at Beave have little knowledge of what goes into it.
+
+\hypertarget{data-analytics-1}{%
+\subsection{Data Analytics}\label{data-analytics-1}}
+
+\hypertarget{most-used-tables}{%
+\chapter{Most Used Tables}\label{most-used-tables}}
+
+\hypertarget{traditional-data}{%
+\section{Traditional Data}\label{traditional-data}}
+
+Within the databases that we covered in one of the previous sections are a litany of tables which we access for various purposes. Below is a list of the popular tables we reference with a short description of what they are for. If you have any questions talk to your supervisor.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FHVHV\_TripRecord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Trip record table for High Volume (UBER, Lyft, VIA prior to Sep 2021) trips after 2019-01, each row represents a trip.
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Dont ever pull the whole table, it will crash your PC. Use `datetimeid' for dates - it is indexed.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[FHVHV\_TripRecord]}
+\NormalTok{  where datetimeid }\SpecialCharTok{\textgreater{}=} \DecValTok{2021080100}\NormalTok{ and datetimeid }\SpecialCharTok{\textless{}} \DecValTok{2021110100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FHV\_Prd\_TripRecord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Trip record table for all fhvs (high volume and non high volume before 2019-02) and just traditional fhvs (after 2019-01). Each row represents a trip.
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Dont ever pull the whole table, it will crash your PC. Use `datetimeid' for dates - it is indexed.\\
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[FHV\_Prd\_TripRecord]}
+\NormalTok{  where datetimeid }\SpecialCharTok{\textgreater{}=} \DecValTok{2021080100}\NormalTok{ and datetimeid }\SpecialCharTok{\textless{}} \DecValTok{2021110100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{vw\_FHVALL\_Triprecord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Combined view of the 2 tables above combined. Each row represents a trip.
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Not every column that is present in the FHVHV\_TripRecord present in the FHV\_Prd\_TripRecord. For example, anything that has to do with financial information.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[vw\_FHVALL\_Triprecord]}
+\NormalTok{  where datetimeid }\SpecialCharTok{\textgreater{}=} \DecValTok{2021080100}\NormalTok{ and datetimeid }\SpecialCharTok{\textless{}} \DecValTok{2021110100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tpep2\_triprecord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Trip record table for medallion (yellow) trips after 2010, each row represents a yellow cab trip .
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Dont ever pull the whole table, it will crash your PC. Use `datetimeid' for dates - it is indexed.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[Tpep2\_triprecord]}
+\NormalTok{  where datetimeid }\SpecialCharTok{\textgreater{}=} \DecValTok{2021080100}\NormalTok{ and datetimeid }\SpecialCharTok{\textless{}} \DecValTok{2021110100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Lpep2\_triprecord}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Trip record table for SHL (green) trips after 2010, each row represents a yellow cab trip .
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: This table's tructure is very similar to Tpep2\_triprecord, but it has much fewer records. Use `datetimeid' for dates - it is indexed.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[Lpep2\_triprecord]}
+\NormalTok{  where datetimeid }\SpecialCharTok{\textgreater{}=} \DecValTok{2021080100}\NormalTok{ and datetimeid }\SpecialCharTok{\textless{}} \DecValTok{2021110100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{DimLocation}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Super important table if you are doing spacial analysis.
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Useful when you are joining it to the trip records by the locationid column
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\SpecialCharTok{*}
+\NormalTok{  FROM [TPEP\_AZURE].[TPEPDW].[dbo].[DimLocation]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Fhv\_base\_list}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The list of bases. Bases are companies that dipatch trips. The table might not be super useful on its own, but it is super useful when you join it to trip tables to figure out an industry or a company name of a base that dispathced a trip.
+  \item
+    Database: Azure\_Trip\_Data
+  \item
+    Note: Not a big table. In the example below, look at the last 5 columns.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{select top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{    FROM}
+\NormalTok{     [TPEP\_AZURE].[TPEPDW].[dbo].[FHV\_Prd\_TripRecord] }
+\NormalTok{    AS TRIPS }
+\NormalTok{    INNER JOIN [TPEP\_AZURE].[TPEPDW].[dbo].[fhv\_base\_list] bases on }
+\NormalTok{    TRIPS.[Dispatching\_base\_num] }\OtherTok{=}\NormalTok{ bases.[LIC\_NO] }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tlc\_camis\_entity}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A snapshot of all entities (all licensees including but not limited to drivers, vehicles, bases) and pertinent information like license application date, addresses etc.
+  \item
+    Database: DataWarehouse
+  \item
+    Note: Very important table. We have a very extensive printed documentation for it. Ask your supervisor for it.
+  \item
+    Sample pull: All active drivers
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT entity\_nam, }\FunctionTok{rtrim}\NormalTok{(}\FunctionTok{ltrim}\NormalTok{(fed\_id)) as fed\_id, }\FunctionTok{rtrim}\NormalTok{(}\FunctionTok{ltrim}\NormalTok{(lic\_no)) as lic\_no, lic\_code, lic\_exp\_date}
+\NormalTok{     from tlc\_camis\_entity}
+\NormalTok{     where lic\_code }\ControlFlowTok{in}\NormalTok{ (}\StringTok{\textquotesingle{}HDR\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}CDR\textquotesingle{}}\NormalTok{) and STAT\_ENTITY\_LIC }\FunctionTok{IN}\NormalTok{ (}\StringTok{\textquotesingle{}002\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}009\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}010\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}RNA\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}ANL\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tlc\_plate}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A table holding all current and historical plate information for vehicles.
+  \item
+    Database: DataWarehouse
+  \item
+    Note: .
+  \item
+    Sample pull: pull top 100
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT top }\DecValTok{100} \SpecialCharTok{*}
+\NormalTok{     from tlc\_plate}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tlc-datawarehouse}{%
+\section{TLC Datawarehouse}\label{tlc-datawarehouse}}
+
+The Data Team, collaborating with IT, built out a data warehouse that automatically aggregates on a set schedule the most often requested data points, drastically increasing the speed with which data can be pulled and analyzed. Most tables in the warehouse update automatically and run on a set schedule. Standard workflow of creating a new table is as follows:
+
+\begin{itemize}
+\item
+  Create a new table with some initial data straight from the SSMS, Python, or R.
+\item
+  Create a Stored Procedure script. The goal of that script is to update the table that you created.
+\item
+  Create a Job in the SSMS job scheduler. That job will run the Stored Procedure that you created in the step 2 on schedule that you specify.
+\end{itemize}
+
+\textbf{Datawarehouse SSMS view:}
+
+\begin{figure}
+\centering
+\includegraphics{my_files/dw1.png}
+\caption{Datawarehouse ex}
+\end{figure}
+
+Here is a connection example using R and Python. Note: you must have the ODBC connection set up the way shown in the section 4.2 of this manual.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(RODBC)}
+
+\NormalTok{tp2 }\OtherTok{=} \FunctionTok{odbcConnect}\NormalTok{(}\StringTok{"TLC\_Policy\_Programs\_Dev"}\NormalTok{, }\AttributeTok{uid =} \StringTok{"..."}\NormalTok{)}
+
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{sqlQuery}\NormalTok{(tp2,}
+                 \StringTok{"SELECT * }
+\StringTok{                 FROM [TLC\_Policy\_Programs\_Dev].[dbo].[high\_volume\_indicators\_weekly\_financials]"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Python:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{import pyodbc}
+
+\NormalTok{params}\OtherTok{=} \FunctionTok{urllib.parse.quote\_plus}\NormalTok{(}\StringTok{"DRIVER=\{SQL Server\};SERVER=msdwvd{-}tlctxy01.csc.nycnet;DATABASE=TLC\_Policy\_Programs\_Dev;Trusted\_Connection=yes"}\NormalTok{)}
+\NormalTok{engine }\OtherTok{=} \FunctionTok{create\_engine}\NormalTok{(}\StringTok{"mssql+pyodbc:///?odbc\_connect=\%s"}\NormalTok{ \% params)}
+
+
+\NormalTok{sql }\OtherTok{=} \StringTok{\textquotesingle{}\textquotesingle{}\textquotesingle{}}
+\StringTok{SELECT * }
+\StringTok{FROM [TLC\_Policy\_Programs\_Dev].[dbo].[high\_volume\_indicators\_weekly\_financials]}
+\StringTok{    \textquotesingle{}\textquotesingle{}\textquotesingle{}}
+    
+\NormalTok{test }\OtherTok{=} \FunctionTok{pd.read\_sql\_query}\NormalTok{(sql, engine)}
+\end{Highlighting}
+\end{Shaded}
+
+The data dictionaries for the majority of tables in the Datawarehouse are in here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_M3trics2\textbackslash{}automation\textbackslash{}data\_dictionaries}
+\end{Highlighting}
+\end{Shaded}
+
+There is also a standardization guide for creating tables and views in the warehouse. You can access it here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_DA}\SpecialCharTok{\&}\NormalTok{E\_\textbackslash{}Nikita\textbackslash{}Supporting\_docs}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+There are many useful tables in the Datawarehouse. I recommend going through the documentation folder to get accustomed with some of them. I would like to list top 5 most used tables in this document though:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{industry\_indicators\_daily\_trips}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This table goes back to 2014 (inclusive) for yellow and green, and to 2015 for fhvs. It contains trip counts aggregated by day, split by every industry.
+  \item
+    Database: TLC\_Policy\_Programs\_Dev
+  \item
+    Note: This table will save you a ton of time.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\FunctionTok{TOP}\NormalTok{ (}\DecValTok{1000}\NormalTok{) [period\_start]}
+\NormalTok{      ,[period\_end]}
+\NormalTok{      ,[metric\_day]}
+\NormalTok{      ,[industry]}
+\NormalTok{      ,[count\_trips]}
+\NormalTok{  FROM [TLC\_Policy\_Programs\_Dev].[dbo].[industry\_indicators\_daily\_trips]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{data\_reports\_monthly\_indicators\_all}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    These are a set of published metrics here that are updated every month and reviewed with the commissioner before updating. They cover a myriad of relevant metrics for certain industries we regulate.
+  \item
+    Database: TLC\_Policy\_Programs\_Dev
+  \item
+    Note: Serves as a base for the monthly indicators that we publish to our website.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\FunctionTok{TOP}\NormalTok{ (}\DecValTok{1000}\NormalTok{) [Month\_Year]}
+\NormalTok{      ,[License\_Class]}
+\NormalTok{      ,[Trips\_Per\_Day]}
+\NormalTok{      ,[Farebox\_Per\_Day]}
+\NormalTok{      ,[Unique\_Drivers]}
+\NormalTok{      ,[Unique\_Vehicles]}
+\NormalTok{      ,[Vehicles\_Per\_Day]}
+\NormalTok{      ,[Avg\_Days\_Vehicles\_on\_Road]}
+\NormalTok{      ,[Avg\_Hours\_Per\_Day\_Per\_Vehicle]}
+\NormalTok{      ,[Avg\_Days\_Drivers\_on\_Road]}
+\NormalTok{      ,[Avg\_Hours\_Per\_Day\_Per\_Driver]}
+\NormalTok{      ,[Avg\_Minutes\_Per\_Trip]}
+\NormalTok{      ,[Percent\_of\_Trips\_Paid\_with\_Credit\_Card]}
+\NormalTok{      ,[Trips\_Per\_Day\_Shared]}
+\NormalTok{  FROM [TLC\_Policy\_Programs\_Dev].[dbo].[data\_reports\_monthly\_indicators\_all]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{high\_volume\_indicators\_weekly\_financials}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    These are a set of metrics we created to track driver income on a Monday to Sunday weekly schedule.
+  \item
+    Database: TLC\_Policy\_Programs\_Dev
+  \item
+    Note: Created in a python script they piggyback off utilization to come up with our best estimate on high volume driver income.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\FunctionTok{TOP}\NormalTok{ (}\DecValTok{1000}\NormalTok{) [date]}
+\NormalTok{      ,[metric\_week]}
+\NormalTok{      ,[aggregate\_pay]}
+\NormalTok{      ,[aggregate\_hours]}
+\NormalTok{      ,[aggregate\_hourly\_pay]}
+\NormalTok{      ,[median\_total\_pay]}
+\NormalTok{      ,[median\_logon\_hours]}
+\NormalTok{      ,[median\_hourly\_pay]}
+\NormalTok{      ,[driver\_count]}
+\NormalTok{      ,[pay\_per\_driver]}
+\NormalTok{  FROM [TLC\_Policy\_Programs\_Dev].[dbo].[high\_volume\_indicators\_weekly\_financials]}
+\NormalTok{  order by metric\_week desc}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{industry\_zone\_indicators\_monthly\_pickups}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Count of pickups split by month, industry, and taxi zone (265).
+  \item
+    Database: TLC\_Policy\_Programs\_Dev
+  \item
+    Note: This table will save you a ton of time.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\FunctionTok{TOP}\NormalTok{ (}\DecValTok{1000}\NormalTok{) [period\_start]}
+\NormalTok{      ,[period\_end]}
+\NormalTok{      ,[metric\_month]}
+\NormalTok{      ,[industry]}
+\NormalTok{      ,[zone]}
+\NormalTok{      ,[count\_pickups]}
+\NormalTok{      ,[count\_pickups\_shared]}
+\NormalTok{      ,[count\_pickups\_ehail]}
+\NormalTok{  FROM [TLC\_Policy\_Programs\_Dev].[dbo].[industry\_zone\_indicators\_monthly\_pickups]}
+\NormalTok{  order by [metric\_month] desc}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{company\_indicators\_weekly\_utilization\_even}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Driver utilization is calculated and loaded into our policy dev server. It is currently run unweighted, meaning that app logon time which is the denominator in this calculation is evenly split for apps a driver is logged into simultaneously.
+  \item
+    Database: TLC\_Policy\_Programs\_Dev
+  \item
+    Note: Note that every nth time a year we re-evaluate utilization publicly as per the law -- legal can provide more assistance on the timeline as Ryan wrote the rules.
+  \item
+    Sample pull:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SELECT }\FunctionTok{TOP}\NormalTok{ (}\DecValTok{1000}\NormalTok{) [period\_start]}
+\NormalTok{      ,[period\_end]}
+\NormalTok{      ,[metric\_week]}
+\NormalTok{      ,[company]}
+\NormalTok{      ,[sum\_cruising\_seconds]}
+\NormalTok{      ,[sum\_passenger\_seconds]}
+\NormalTok{      ,[pct\_utilization]}
+\NormalTok{  FROM [TLC\_Policy\_Programs\_Dev].[dbo].[company\_indicators\_weekly\_utilization\_even]}
+\end{Highlighting}
+\end{Shaded}
+
+This section will be developed more in the future.
+
+\hypertarget{major-projects}{%
+\chapter{Major Projects}\label{major-projects}}
+
+Data team is responsible for a lot of interesing and essential projects. Some of these projects are very important to the day-to-day operations of the agency. Here is an overview of the top 5 most important data projects. This section is flexible and will be either expanded or shrunk as needed.
+
+\hypertarget{tlc-datawarehouse-1}{%
+\section{TLC Datawarehouse}\label{tlc-datawarehouse-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{What}
+\end{itemize}
+
+known as our policy dev server, this is a database provided by IT where we store aggregated tables and important metrics. Every 1-2 weeks numbers are updated to support policy.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Who}
+\end{itemize}
+
+built by the policy analytics team, it is maintained now by Nikita Voevodin with IT support from Maxim Smolyaninov.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Next steps}
+\end{itemize}
+
+new tables should be created for requests that are deemed repetitive and automatable.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Directories and sources}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_M3trics2\textbackslash{}automation }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Catalog and data dictionaries here}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Data science reference}\SpecialCharTok{:}\NormalTok{ I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_M3trics2\textbackslash{}automation\textbackslash{}data\_dictionaries }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Point}
+\end{itemize}
+
+Nikita Voevodin should oversee this. Note that this is a very large piece of the work we do -- without this database we would have to redo requests constantly, slowing down work greatly. Almost every basic number fielded by public affairs, PR, senior management comes from some table that lives
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{IT Support}
+\end{itemize}
+
+Maxim Smolyaninov
+
+\hypertarget{data-reports---monthly-indicators}{%
+\section{Data Reports - Monthly Indicators}\label{data-reports---monthly-indicators}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{What}
+  This report is published on open data and on our website and is reviewed with the commissioner every month. It includes a lot of relevant data from the traditional fhv bases (trip patterns, vehicle and driver counts etc )
+\end{itemize}
+
+Table published on open data with the following columns: Base License Number, Base Name, DBA, Year, Month, Month Name, Total Dispatched Trips, Total Dispatched Shared Trips, Unique Dispatched Vehicles.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Location:}
+\end{itemize}
+
+\url{https://data.cityofnewyork.us/Transportation/FHV-Base-Aggregate-Report/2v9c-2k7f}
+
+\begin{itemize}
+\item
+  \textbf{Point}
+  Nikita
+\item
+  \textbf{Support}
+\end{itemize}
+
+IT/ Web: Konstantin Onishchenko, PR: Alan Fromberg, Rebecca Harshbarger
+
+\hypertarget{driver-utilization-data}{%
+\section{Driver Utilization data}\label{driver-utilization-data}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{What}
+\end{itemize}
+
+Driver utilization is calculated and loaded into our policy datawarehouse. It is currently run unweighted, meaning that app logon time which is the denominator in this calculation is evenly split for apps a driver is logged into simultaneously. Note that every nth time a year we re-evaluate utilization publicly as per the law -- legal can provide more assistance on the timeline as Ryan wrote the rules.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Metrics:}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_M3trics2\textbackslash{}automation\textbackslash{}data\_dictionaries. File}\SpecialCharTok{:} \StringTok{"company\_indicators\_weekly\_utilization\_even"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Point:}
+\end{itemize}
+
+Nikita
+
+\hypertarget{tlc-data-hub}{%
+\section{TLC Data Hub}\label{tlc-data-hub}}
+
+\begin{itemize}
+\item
+  \textbf{What}
+  TLC Data Hub offers users a new and convenient location to access and visualize taxi and for hire industry data. TLC Data Hub uses public data available on Open Data and the TLC website and does not use, track or display any private information of the drivers or companies. The Hub currently consists of two dashboards. The `Trip Viz' dashboard allows the public to run queries on TLC-collected trip data while the `Industry metrics' dashboard provides standard visualizations of monthly industry trends.
+\item
+  \textbf{Address}
+\end{itemize}
+
+\url{https://tlcanalytics.shinyapps.io/dash_test/}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Point}
+\end{itemize}
+
+Nikita
+
+\hypertarget{raw-trip-records-publishing}{%
+\section{Raw Trip Records publishing}\label{raw-trip-records-publishing}}
+
+\begin{itemize}
+\item
+  \textbf{What}
+  Every 6 months TLC aims to release the previous 6 months of raw trip record data publicly both on our website and Open Data.
+\item
+  \textbf{Process:}
+  Ticket to Lana to create monthly files
+\end{itemize}
+
+Review with Chair
+
+Send Konstantin links for him to stage (they will have predictable names based on month and industry)
+
+Ticket to Lana to load files to AWS
+
+Send links to Alex Finkel at DoITT to post to Open Data
+
+\begin{itemize}
+\item
+  \textbf{User Guide:}
+  \url{https://www1.nyc.gov/assets/tlc/downloads/pdf/trip_record_user_guide.pdf}
+\item
+  \textbf{Yellow Dictionary:}
+  \url{https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf}\\
+\item
+  \textbf{Green Dictionary:}
+  \url{https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf}\\
+\item
+  \textbf{FHV Dictionary:}
+  \url{https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_fhv.pdf}\\
+\item
+  \textbf{High Volume Dictionary:}
+  \url{https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf}
+\item
+  \textbf{Point}
+\end{itemize}
+
+Nikita
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Support}
+\end{itemize}
+
+IT/Data: Lana Goldenberg, IT/ Web: Konstantin Onishchenko, PR: Alan Fromberg, Rebecca Harshbarger
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Reccomendation}
+\end{itemize}
+
+Publish raw trip records monthly on a 2 month delay. Reason for 2-month delay: trad fhv bases submit their data with varying delay (4-6 weeks). For reffernce, HVFHV delay is 2-3 weeks, yellow and green: 2 weeks. I do not recommend to relase the data as it comes or on different schedules, as the process is very time consuming. As of now, we release bi-annually. Releasing monthly is x6 the workload. Releasing `as it comes' is x24 the workload. Additioally, releasing on a 2-month delay schedule would allow us to catch submission errors and ensure data integrity.
+
+There are many more tasks that we handle. Some of them are listed in the ``Recurring\_Tasks'' Document located at:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{I}\SpecialCharTok{:}\NormalTok{\textbackslash{}COF\textbackslash{}COF\textbackslash{}\_DA}\SpecialCharTok{\&}\NormalTok{E\_\textbackslash{}Nikita\textbackslash{}Reports\textbackslash{}Task\_spreadsheet}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{my_files/recurring_tasks.png}
+\caption{Recurring tasks ex}
+\end{figure}
+
+\hypertarget{useful-code-snippets-tricks}{%
+\chapter{Useful Code Snippets \& Tricks}\label{useful-code-snippets-tricks}}
+
+TBD
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

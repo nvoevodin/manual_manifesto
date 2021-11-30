@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
+
+
+<meta name="date" content="2021-11-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="most-used-tables.html"/>
+<link rel="next" href="useful-code-snippets-tricks.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Scope</a></li>
+<li class="chapter" data-level="2" data-path="the-team.html"><a href="the-team.html"><i class="fa fa-check"></i><b>2</b> The Team</a></li>
+<li class="chapter" data-level="3" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>3</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="workflow.html"><a href="workflow.html#establishing-a-data-science-environment"><i class="fa fa-check"></i><b>3.1</b> Establishing a Data Science Environment</a></li>
+<li class="chapter" data-level="3.2" data-path="workflow.html"><a href="workflow.html#professional-development"><i class="fa fa-check"></i><b>3.2</b> Professional Development</a></li>
+<li class="chapter" data-level="3.3" data-path="workflow.html"><a href="workflow.html#metrics-analytics-automation"><i class="fa fa-check"></i><b>3.3</b> Metrics, Analytics &amp; Automation</a></li>
+<li class="chapter" data-level="3.4" data-path="workflow.html"><a href="workflow.html#dashboards-apps"><i class="fa fa-check"></i><b>3.4</b> Dashboards &amp; Apps</a></li>
+<li class="chapter" data-level="3.5" data-path="workflow.html"><a href="workflow.html#passwords-usernames-accounts"><i class="fa fa-check"></i><b>3.5</b> Passwords, Usernames, Accounts</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-connections-access.html"><a href="data-connections-access.html"><i class="fa fa-check"></i><b>4</b> Data Connections &amp; Access</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-connections-access.html"><a href="data-connections-access.html#sql-server"><i class="fa fa-check"></i><b>4.1</b> SQL Server</a></li>
+<li class="chapter" data-level="4.2" data-path="data-connections-access.html"><a href="data-connections-access.html#pertinent-it-databases"><i class="fa fa-check"></i><b>4.2</b> Pertinent IT Databases</a></li>
+<li class="chapter" data-level="4.3" data-path="data-connections-access.html"><a href="data-connections-access.html#open-data-database"><i class="fa fa-check"></i><b>4.3</b> Open Data Database</a></li>
+<li class="chapter" data-level="4.4" data-path="data-connections-access.html"><a href="data-connections-access.html#open-data"><i class="fa fa-check"></i><b>4.4</b> Open Data</a></li>
+<li class="chapter" data-level="4.5" data-path="data-connections-access.html"><a href="data-connections-access.html#proxy-settings"><i class="fa fa-check"></i><b>4.5</b> Proxy Settings</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tasks-checkups.html"><a href="tasks-checkups.html"><i class="fa fa-check"></i><b>5</b> Tasks &amp; CheckUps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tasks-checkups.html"><a href="tasks-checkups.html#trello"><i class="fa fa-check"></i><b>5.1</b> Trello</a></li>
+<li class="chapter" data-level="5.2" data-path="tasks-checkups.html"><a href="tasks-checkups.html#weekly-meetings"><i class="fa fa-check"></i><b>5.2</b> Weekly Meetings</a></li>
+<li class="chapter" data-level="5.3" data-path="tasks-checkups.html"><a href="tasks-checkups.html#evaluations"><i class="fa fa-check"></i><b>5.3</b> Evaluations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html"><i class="fa fa-check"></i><b>6</b> Other Teams &amp; Contacts</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#beaver"><i class="fa fa-check"></i><b>6.1</b> Beaver</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics-engineering"><i class="fa fa-check"></i><b>6.1.1</b> Data Analytics &amp; Engineering</a></li>
+<li class="chapter" data-level="6.1.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#policy"><i class="fa fa-check"></i><b>6.1.2</b> Policy</a></li>
+<li class="chapter" data-level="6.1.3" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#programs"><i class="fa fa-check"></i><b>6.1.3</b> Programs</a></li>
+<li class="chapter" data-level="6.1.4" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#it-data"><i class="fa fa-check"></i><b>6.1.4</b> IT (DATA)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#legal"><i class="fa fa-check"></i><b>6.1.5</b> Legal</a></li>
+<li class="chapter" data-level="6.1.6" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#pr"><i class="fa fa-check"></i><b>6.1.6</b> PR</a></li>
+<li class="chapter" data-level="6.1.7" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#external-affairs"><i class="fa fa-check"></i><b>6.1.7</b> External Affairs</a></li>
+<li class="chapter" data-level="6.1.8" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#hr"><i class="fa fa-check"></i><b>6.1.8</b> HR</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#lic-licensing-and-courts"><i class="fa fa-check"></i><b>6.2</b> LIC (Licensing and Courts)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics"><i class="fa fa-check"></i><b>6.2.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="6.2.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#prosecution"><i class="fa fa-check"></i><b>6.2.2</b> Prosecution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#queens-inspection-and-enforcement"><i class="fa fa-check"></i><b>6.3</b> Queens (Inspection and Enforcement)</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics-1"><i class="fa fa-check"></i><b>6.3.1</b> Data Analytics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="most-used-tables.html"><a href="most-used-tables.html"><i class="fa fa-check"></i><b>7</b> Most Used Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="most-used-tables.html"><a href="most-used-tables.html#traditional-data"><i class="fa fa-check"></i><b>7.1</b> Traditional Data</a></li>
+<li class="chapter" data-level="7.2" data-path="most-used-tables.html"><a href="most-used-tables.html#tlc-datawarehouse"><i class="fa fa-check"></i><b>7.2</b> TLC Datawarehouse</a></li>
+<li class="chapter" data-level="7.3" data-path="most-used-tables.html"><a href="most-used-tables.html#tables"><i class="fa fa-check"></i><b>7.3</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="major-projects.html"><a href="major-projects.html"><i class="fa fa-check"></i><b>8</b> Major Projects</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="major-projects.html"><a href="major-projects.html#tlc-datawarehouse-1"><i class="fa fa-check"></i><b>8.1</b> TLC Datawarehouse</a></li>
+<li class="chapter" data-level="8.2" data-path="major-projects.html"><a href="major-projects.html#data-reports---monthly-indicators"><i class="fa fa-check"></i><b>8.2</b> Data Reports - Monthly Indicators</a></li>
+<li class="chapter" data-level="8.3" data-path="major-projects.html"><a href="major-projects.html#driver-utilization-data"><i class="fa fa-check"></i><b>8.3</b> Driver Utilization data</a></li>
+<li class="chapter" data-level="8.4" data-path="major-projects.html"><a href="major-projects.html#tlc-data-hub"><i class="fa fa-check"></i><b>8.4</b> TLC Data Hub</a></li>
+<li class="chapter" data-level="8.5" data-path="major-projects.html"><a href="major-projects.html#raw-trip-records-publishing"><i class="fa fa-check"></i><b>8.5</b> Raw Trip Records publishing</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>9</b> Useful Code Snippets &amp; Tricks</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics &amp; Engineering Team Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="major-projects" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Major Projects</h1>
+<p>Data team is responsible for a lot of interesing and essential projects. Some of these projects are very important to the day-to-day operations of the agency. Here is an overview of the top 5 most important data projects. This section is flexible and will be either expanded or shrunk as needed.</p>
+<div id="tlc-datawarehouse-1" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> TLC Datawarehouse</h2>
+<ul>
+<li><strong>What</strong></li>
+</ul>
+<p>known as our policy dev server, this is a database provided by IT where we store aggregated tables and important metrics. Every 1-2 weeks numbers are updated to support policy.</p>
+<ul>
+<li><strong>Who</strong></li>
+</ul>
+<p>built by the policy analytics team, it is maintained now by Nikita Voevodin with IT support from Maxim Smolyaninov.</p>
+<ul>
+<li><strong>Next steps</strong></li>
+</ul>
+<p>new tables should be created for requests that are deemed repetitive and automatable.</p>
+<ul>
+<li><strong>Directories and sources</strong></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="major-projects.html#cb24-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_M3trics2\automation </span></code></pre></div>
+<ul>
+<li><strong>Catalog and data dictionaries here</strong></li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="major-projects.html#cb25-1" aria-hidden="true" tabindex="-1"></a>Data science reference<span class="sc">:</span> I<span class="sc">:</span>\COF\COF\_M3trics2\automation\data_dictionaries </span></code></pre></div>
+<ul>
+<li><strong>Point</strong></li>
+</ul>
+<p>Nikita Voevodin should oversee this. Note that this is a very large piece of the work we do – without this database we would have to redo requests constantly, slowing down work greatly. Almost every basic number fielded by public affairs, PR, senior management comes from some table that lives</p>
+<ul>
+<li><strong>IT Support</strong></li>
+</ul>
+<p>Maxim Smolyaninov</p>
+</div>
+<div id="data-reports---monthly-indicators" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Data Reports - Monthly Indicators</h2>
+<ul>
+<li><strong>What</strong>
+This report is published on open data and on our website and is reviewed with the commissioner every month. It includes a lot of relevant data from the traditional fhv bases (trip patterns, vehicle and driver counts etc )</li>
+</ul>
+<p>Table published on open data with the following columns: Base License Number, Base Name, DBA, Year, Month, Month Name, Total Dispatched Trips, Total Dispatched Shared Trips, Unique Dispatched Vehicles.</p>
+<ul>
+<li><strong>Location:</strong></li>
+</ul>
+<p><a href="https://data.cityofnewyork.us/Transportation/FHV-Base-Aggregate-Report/2v9c-2k7f" class="uri">https://data.cityofnewyork.us/Transportation/FHV-Base-Aggregate-Report/2v9c-2k7f</a></p>
+<ul>
+<li><p><strong>Point</strong>
+Nikita</p></li>
+<li><p><strong>Support</strong></p></li>
+</ul>
+<p>IT/ Web: Konstantin Onishchenko, PR: Alan Fromberg, Rebecca Harshbarger</p>
+</div>
+<div id="driver-utilization-data" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Driver Utilization data</h2>
+<ul>
+<li><strong>What</strong></li>
+</ul>
+<p>Driver utilization is calculated and loaded into our policy datawarehouse. It is currently run unweighted, meaning that app logon time which is the denominator in this calculation is evenly split for apps a driver is logged into simultaneously. Note that every nth time a year we re-evaluate utilization publicly as per the law – legal can provide more assistance on the timeline as Ryan wrote the rules.</p>
+<ul>
+<li><strong>Metrics:</strong></li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="major-projects.html#cb26-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_M3trics2\automation\data_dictionaries. File<span class="sc">:</span> <span class="st">&quot;company_indicators_weekly_utilization_even&quot;</span></span></code></pre></div>
+<ul>
+<li><strong>Point:</strong></li>
+</ul>
+<p>Nikita</p>
+</div>
+<div id="tlc-data-hub" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> TLC Data Hub</h2>
+<ul>
+<li><p><strong>What</strong>
+TLC Data Hub offers users a new and convenient location to access and visualize taxi and for hire industry data. TLC Data Hub uses public data available on Open Data and the TLC website and does not use, track or display any private information of the drivers or companies. The Hub currently consists of two dashboards. The ‘Trip Viz’ dashboard allows the public to run queries on TLC-collected trip data while the ‘Industry metrics’ dashboard provides standard visualizations of monthly industry trends.</p></li>
+<li><p><strong>Address</strong></p></li>
+</ul>
+<p><a href="https://tlcanalytics.shinyapps.io/dash_test/" class="uri">https://tlcanalytics.shinyapps.io/dash_test/</a></p>
+<ul>
+<li><strong>Point</strong></li>
+</ul>
+<p>Nikita</p>
+</div>
+<div id="raw-trip-records-publishing" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> Raw Trip Records publishing</h2>
+<ul>
+<li><p><strong>What</strong>
+Every 6 months TLC aims to release the previous 6 months of raw trip record data publicly both on our website and Open Data.</p></li>
+<li><p><strong>Process:</strong>
+Ticket to Lana to create monthly files</p></li>
+</ul>
+<p>Review with Chair</p>
+<p>Send Konstantin links for him to stage (they will have predictable names based on month and industry)</p>
+<p>Ticket to Lana to load files to AWS</p>
+<p>Send links to Alex Finkel at DoITT to post to Open Data</p>
+<ul>
+<li><p><strong>User Guide:</strong>
+<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/trip_record_user_guide.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/trip_record_user_guide.pdf</a></p></li>
+<li><p><strong>Yellow Dictionary:</strong>
+<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf</a><br />
+</p></li>
+<li><p><strong>Green Dictionary:</strong>
+<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf</a><br />
+</p></li>
+<li><p><strong>FHV Dictionary:</strong>
+<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_fhv.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_fhv.pdf</a><br />
+</p></li>
+<li><p><strong>High Volume Dictionary:</strong>
+<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf</a></p></li>
+<li><p><strong>Point</strong></p></li>
+</ul>
+<p>Nikita</p>
+<ul>
+<li><strong>Support</strong></li>
+</ul>
+<p>IT/Data: Lana Goldenberg, IT/ Web: Konstantin Onishchenko, PR: Alan Fromberg, Rebecca Harshbarger</p>
+<ul>
+<li><strong>Reccomendation</strong></li>
+</ul>
+<p>Publish raw trip records monthly on a 2 month delay. Reason for 2-month delay: trad fhv bases submit their data with varying delay (4-6 weeks). For reffernce, HVFHV delay is 2-3 weeks, yellow and green: 2 weeks. I do not recommend to relase the data as it comes or on different schedules, as the process is very time consuming. As of now, we release bi-annually. Releasing monthly is x6 the workload. Releasing ‘as it comes’ is x24 the workload. Additioally, releasing on a 2-month delay schedule would allow us to catch submission errors and ensure data integrity.</p>
+<p>There are many more tasks that we handle. Some of them are listed in the “Recurring_Tasks” Document located at:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="major-projects.html#cb27-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_DA<span class="sc">&amp;</span>E_\Nikita\Reports\Task_spreadsheet</span></code></pre></div>
+<div class="figure">
+<img src="my_files/recurring_tasks.png" alt="" />
+<p class="caption">Recurring tasks ex</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="most-used-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="useful-code-snippets-tricks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

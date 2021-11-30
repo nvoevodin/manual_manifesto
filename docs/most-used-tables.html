@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Most Used Tables | Data Analytics &amp; Engineering Team Manual" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
+
+
+<meta name="date" content="2021-11-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="other-teams-contacts.html"/>
+<link rel="next" href="major-projects.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Scope</a></li>
+<li class="chapter" data-level="2" data-path="the-team.html"><a href="the-team.html"><i class="fa fa-check"></i><b>2</b> The Team</a></li>
+<li class="chapter" data-level="3" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>3</b> Workflow</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="workflow.html"><a href="workflow.html#establishing-a-data-science-environment"><i class="fa fa-check"></i><b>3.1</b> Establishing a Data Science Environment</a></li>
+<li class="chapter" data-level="3.2" data-path="workflow.html"><a href="workflow.html#professional-development"><i class="fa fa-check"></i><b>3.2</b> Professional Development</a></li>
+<li class="chapter" data-level="3.3" data-path="workflow.html"><a href="workflow.html#metrics-analytics-automation"><i class="fa fa-check"></i><b>3.3</b> Metrics, Analytics &amp; Automation</a></li>
+<li class="chapter" data-level="3.4" data-path="workflow.html"><a href="workflow.html#dashboards-apps"><i class="fa fa-check"></i><b>3.4</b> Dashboards &amp; Apps</a></li>
+<li class="chapter" data-level="3.5" data-path="workflow.html"><a href="workflow.html#passwords-usernames-accounts"><i class="fa fa-check"></i><b>3.5</b> Passwords, Usernames, Accounts</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-connections-access.html"><a href="data-connections-access.html"><i class="fa fa-check"></i><b>4</b> Data Connections &amp; Access</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-connections-access.html"><a href="data-connections-access.html#sql-server"><i class="fa fa-check"></i><b>4.1</b> SQL Server</a></li>
+<li class="chapter" data-level="4.2" data-path="data-connections-access.html"><a href="data-connections-access.html#pertinent-it-databases"><i class="fa fa-check"></i><b>4.2</b> Pertinent IT Databases</a></li>
+<li class="chapter" data-level="4.3" data-path="data-connections-access.html"><a href="data-connections-access.html#open-data-database"><i class="fa fa-check"></i><b>4.3</b> Open Data Database</a></li>
+<li class="chapter" data-level="4.4" data-path="data-connections-access.html"><a href="data-connections-access.html#open-data"><i class="fa fa-check"></i><b>4.4</b> Open Data</a></li>
+<li class="chapter" data-level="4.5" data-path="data-connections-access.html"><a href="data-connections-access.html#proxy-settings"><i class="fa fa-check"></i><b>4.5</b> Proxy Settings</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tasks-checkups.html"><a href="tasks-checkups.html"><i class="fa fa-check"></i><b>5</b> Tasks &amp; CheckUps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tasks-checkups.html"><a href="tasks-checkups.html#trello"><i class="fa fa-check"></i><b>5.1</b> Trello</a></li>
+<li class="chapter" data-level="5.2" data-path="tasks-checkups.html"><a href="tasks-checkups.html#weekly-meetings"><i class="fa fa-check"></i><b>5.2</b> Weekly Meetings</a></li>
+<li class="chapter" data-level="5.3" data-path="tasks-checkups.html"><a href="tasks-checkups.html#evaluations"><i class="fa fa-check"></i><b>5.3</b> Evaluations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html"><i class="fa fa-check"></i><b>6</b> Other Teams &amp; Contacts</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#beaver"><i class="fa fa-check"></i><b>6.1</b> Beaver</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics-engineering"><i class="fa fa-check"></i><b>6.1.1</b> Data Analytics &amp; Engineering</a></li>
+<li class="chapter" data-level="6.1.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#policy"><i class="fa fa-check"></i><b>6.1.2</b> Policy</a></li>
+<li class="chapter" data-level="6.1.3" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#programs"><i class="fa fa-check"></i><b>6.1.3</b> Programs</a></li>
+<li class="chapter" data-level="6.1.4" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#it-data"><i class="fa fa-check"></i><b>6.1.4</b> IT (DATA)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#legal"><i class="fa fa-check"></i><b>6.1.5</b> Legal</a></li>
+<li class="chapter" data-level="6.1.6" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#pr"><i class="fa fa-check"></i><b>6.1.6</b> PR</a></li>
+<li class="chapter" data-level="6.1.7" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#external-affairs"><i class="fa fa-check"></i><b>6.1.7</b> External Affairs</a></li>
+<li class="chapter" data-level="6.1.8" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#hr"><i class="fa fa-check"></i><b>6.1.8</b> HR</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#lic-licensing-and-courts"><i class="fa fa-check"></i><b>6.2</b> LIC (Licensing and Courts)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics"><i class="fa fa-check"></i><b>6.2.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="6.2.2" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#prosecution"><i class="fa fa-check"></i><b>6.2.2</b> Prosecution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#queens-inspection-and-enforcement"><i class="fa fa-check"></i><b>6.3</b> Queens (Inspection and Enforcement)</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="other-teams-contacts.html"><a href="other-teams-contacts.html#data-analytics-1"><i class="fa fa-check"></i><b>6.3.1</b> Data Analytics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="most-used-tables.html"><a href="most-used-tables.html"><i class="fa fa-check"></i><b>7</b> Most Used Tables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="most-used-tables.html"><a href="most-used-tables.html#traditional-data"><i class="fa fa-check"></i><b>7.1</b> Traditional Data</a></li>
+<li class="chapter" data-level="7.2" data-path="most-used-tables.html"><a href="most-used-tables.html#tlc-datawarehouse"><i class="fa fa-check"></i><b>7.2</b> TLC Datawarehouse</a></li>
+<li class="chapter" data-level="7.3" data-path="most-used-tables.html"><a href="most-used-tables.html#tables"><i class="fa fa-check"></i><b>7.3</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="major-projects.html"><a href="major-projects.html"><i class="fa fa-check"></i><b>8</b> Major Projects</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="major-projects.html"><a href="major-projects.html#tlc-datawarehouse-1"><i class="fa fa-check"></i><b>8.1</b> TLC Datawarehouse</a></li>
+<li class="chapter" data-level="8.2" data-path="major-projects.html"><a href="major-projects.html#data-reports---monthly-indicators"><i class="fa fa-check"></i><b>8.2</b> Data Reports - Monthly Indicators</a></li>
+<li class="chapter" data-level="8.3" data-path="major-projects.html"><a href="major-projects.html#driver-utilization-data"><i class="fa fa-check"></i><b>8.3</b> Driver Utilization data</a></li>
+<li class="chapter" data-level="8.4" data-path="major-projects.html"><a href="major-projects.html#tlc-data-hub"><i class="fa fa-check"></i><b>8.4</b> TLC Data Hub</a></li>
+<li class="chapter" data-level="8.5" data-path="major-projects.html"><a href="major-projects.html#raw-trip-records-publishing"><i class="fa fa-check"></i><b>8.5</b> Raw Trip Records publishing</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>9</b> Useful Code Snippets &amp; Tricks</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics &amp; Engineering Team Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="most-used-tables" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Most Used Tables</h1>
+<div id="traditional-data" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Traditional Data</h2>
+<p>Within the databases that we covered in one of the previous sections are a litany of tables which we access for various purposes. Below is a list of the popular tables we reference with a short description of what they are for. If you have any questions talk to your supervisor.</p>
+<ul>
+<li><strong>FHVHV_TripRecord</strong>
+<ul>
+<li>Trip record table for High Volume (UBER, Lyft, VIA prior to Sep 2021) trips after 2019-01, each row represents a trip.</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Dont ever pull the whole table, it will crash your PC. Use ‘datetimeid’ for dates - it is indexed.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="most-used-tables.html#cb6-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb6-2"><a href="most-used-tables.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[FHVHV_TripRecord]</span>
+<span id="cb6-3"><a href="most-used-tables.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  where datetimeid <span class="sc">&gt;=</span> <span class="dv">2021080100</span> and datetimeid <span class="sc">&lt;</span> <span class="dv">2021110100</span></span></code></pre></div>
+<ul>
+<li><strong>FHV_Prd_TripRecord</strong>
+<ul>
+<li>Trip record table for all fhvs (high volume and non high volume before 2019-02) and just traditional fhvs (after 2019-01). Each row represents a trip.</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Dont ever pull the whole table, it will crash your PC. Use ‘datetimeid’ for dates - it is indexed.<br />
+</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="most-used-tables.html#cb7-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb7-2"><a href="most-used-tables.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[FHV_Prd_TripRecord]</span>
+<span id="cb7-3"><a href="most-used-tables.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  where datetimeid <span class="sc">&gt;=</span> <span class="dv">2021080100</span> and datetimeid <span class="sc">&lt;</span> <span class="dv">2021110100</span></span></code></pre></div>
+<ul>
+<li><strong>vw_FHVALL_Triprecord</strong>
+<ul>
+<li>Combined view of the 2 tables above combined. Each row represents a trip.</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Not every column that is present in the FHVHV_TripRecord present in the FHV_Prd_TripRecord. For example, anything that has to do with financial information.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="most-used-tables.html#cb8-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb8-2"><a href="most-used-tables.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[vw_FHVALL_Triprecord]</span>
+<span id="cb8-3"><a href="most-used-tables.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  where datetimeid <span class="sc">&gt;=</span> <span class="dv">2021080100</span> and datetimeid <span class="sc">&lt;</span> <span class="dv">2021110100</span></span></code></pre></div>
+<ul>
+<li><strong>Tpep2_triprecord</strong>
+<ul>
+<li>Trip record table for medallion (yellow) trips after 2010, each row represents a yellow cab trip .</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Dont ever pull the whole table, it will crash your PC. Use ‘datetimeid’ for dates - it is indexed.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="most-used-tables.html#cb9-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb9-2"><a href="most-used-tables.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[Tpep2_triprecord]</span>
+<span id="cb9-3"><a href="most-used-tables.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  where datetimeid <span class="sc">&gt;=</span> <span class="dv">2021080100</span> and datetimeid <span class="sc">&lt;</span> <span class="dv">2021110100</span></span></code></pre></div>
+<ul>
+<li><strong>Lpep2_triprecord</strong>
+<ul>
+<li>Trip record table for SHL (green) trips after 2010, each row represents a yellow cab trip .</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: This table’s tructure is very similar to Tpep2_triprecord, but it has much fewer records. Use ‘datetimeid’ for dates - it is indexed.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="most-used-tables.html#cb10-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb10-2"><a href="most-used-tables.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[Lpep2_triprecord]</span>
+<span id="cb10-3"><a href="most-used-tables.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  where datetimeid <span class="sc">&gt;=</span> <span class="dv">2021080100</span> and datetimeid <span class="sc">&lt;</span> <span class="dv">2021110100</span></span></code></pre></div>
+<ul>
+<li><strong>DimLocation</strong>
+<ul>
+<li>Super important table if you are doing spacial analysis.</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Useful when you are joining it to the trip records by the locationid column</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="most-used-tables.html#cb11-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="sc">*</span></span>
+<span id="cb11-2"><a href="most-used-tables.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  FROM [TPEP_AZURE].[TPEPDW].[dbo].[DimLocation]</span></code></pre></div>
+<ul>
+<li><strong>Fhv_base_list</strong>
+<ul>
+<li>The list of bases. Bases are companies that dipatch trips. The table might not be super useful on its own, but it is super useful when you join it to trip tables to figure out an industry or a company name of a base that dispathced a trip.</li>
+<li>Database: Azure_Trip_Data</li>
+<li>Note: Not a big table. In the example below, look at the last 5 columns.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="most-used-tables.html#cb12-1" aria-hidden="true" tabindex="-1"></a>select top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb12-2"><a href="most-used-tables.html#cb12-2" aria-hidden="true" tabindex="-1"></a>    FROM</span>
+<span id="cb12-3"><a href="most-used-tables.html#cb12-3" aria-hidden="true" tabindex="-1"></a>     [TPEP_AZURE].[TPEPDW].[dbo].[FHV_Prd_TripRecord] </span>
+<span id="cb12-4"><a href="most-used-tables.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    AS TRIPS </span>
+<span id="cb12-5"><a href="most-used-tables.html#cb12-5" aria-hidden="true" tabindex="-1"></a>    INNER JOIN [TPEP_AZURE].[TPEPDW].[dbo].[fhv_base_list] bases on </span>
+<span id="cb12-6"><a href="most-used-tables.html#cb12-6" aria-hidden="true" tabindex="-1"></a>    TRIPS.[Dispatching_base_num] <span class="ot">=</span> bases.[LIC_NO] </span></code></pre></div>
+<ul>
+<li><strong>Tlc_camis_entity</strong>
+<ul>
+<li>A snapshot of all entities (all licensees including but not limited to drivers, vehicles, bases) and pertinent information like license application date, addresses etc.</li>
+<li>Database: DataWarehouse</li>
+<li>Note: Very important table. We have a very extensive printed documentation for it. Ask your supervisor for it.</li>
+<li>Sample pull: All active drivers</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="most-used-tables.html#cb13-1" aria-hidden="true" tabindex="-1"></a>SELECT entity_nam, <span class="fu">rtrim</span>(<span class="fu">ltrim</span>(fed_id)) as fed_id, <span class="fu">rtrim</span>(<span class="fu">ltrim</span>(lic_no)) as lic_no, lic_code, lic_exp_date</span>
+<span id="cb13-2"><a href="most-used-tables.html#cb13-2" aria-hidden="true" tabindex="-1"></a>     from tlc_camis_entity</span>
+<span id="cb13-3"><a href="most-used-tables.html#cb13-3" aria-hidden="true" tabindex="-1"></a>     where lic_code <span class="cf">in</span> (<span class="st">&#39;HDR&#39;</span>,<span class="st">&#39;CDR&#39;</span>) and STAT_ENTITY_LIC <span class="fu">IN</span> (<span class="st">&#39;002&#39;</span>,<span class="st">&#39;009&#39;</span>,<span class="st">&#39;010&#39;</span>,<span class="st">&#39;RNA&#39;</span>,<span class="st">&#39;ANL&#39;</span>)</span></code></pre></div>
+<ul>
+<li><strong>Tlc_plate</strong>
+<ul>
+<li>A table holding all current and historical plate information for vehicles.</li>
+<li>Database: DataWarehouse</li>
+<li>Note: .</li>
+<li>Sample pull: pull top 100</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="most-used-tables.html#cb14-1" aria-hidden="true" tabindex="-1"></a>SELECT top <span class="dv">100</span> <span class="sc">*</span></span>
+<span id="cb14-2"><a href="most-used-tables.html#cb14-2" aria-hidden="true" tabindex="-1"></a>     from tlc_plate</span></code></pre></div>
+</div>
+<div id="tlc-datawarehouse" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> TLC Datawarehouse</h2>
+<p>The Data Team, collaborating with IT, built out a data warehouse that automatically aggregates on a set schedule the most often requested data points, drastically increasing the speed with which data can be pulled and analyzed. Most tables in the warehouse update automatically and run on a set schedule. Standard workflow of creating a new table is as follows:</p>
+<ul>
+<li><p>Create a new table with some initial data straight from the SSMS, Python, or R.</p></li>
+<li><p>Create a Stored Procedure script. The goal of that script is to update the table that you created.</p></li>
+<li><p>Create a Job in the SSMS job scheduler. That job will run the Stored Procedure that you created in the step 2 on schedule that you specify.</p></li>
+</ul>
+<p><strong>Datawarehouse SSMS view:</strong></p>
+<div class="figure">
+<img src="my_files/dw1.PNG" alt="" />
+<p class="caption">Datawarehouse ex</p>
+</div>
+<p>Here is a connection example using R and Python. Note: you must have the ODBC connection set up the way shown in the section 4.2 of this manual.</p>
+<ul>
+<li><strong>R:</strong></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="most-used-tables.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RODBC)</span>
+<span id="cb15-2"><a href="most-used-tables.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="most-used-tables.html#cb15-3" aria-hidden="true" tabindex="-1"></a>tp2 <span class="ot">=</span> <span class="fu">odbcConnect</span>(<span class="st">&quot;TLC_Policy_Programs_Dev&quot;</span>, <span class="at">uid =</span> <span class="st">&quot;...&quot;</span>)</span>
+<span id="cb15-4"><a href="most-used-tables.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="most-used-tables.html#cb15-5" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">sqlQuery</span>(tp2,</span>
+<span id="cb15-6"><a href="most-used-tables.html#cb15-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;SELECT * </span></span>
+<span id="cb15-7"><a href="most-used-tables.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="st">                 FROM [TLC_Policy_Programs_Dev].[dbo].[high_volume_indicators_weekly_financials]&quot;</span>)</span></code></pre></div>
+<ul>
+<li><strong>Python:</strong></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="most-used-tables.html#cb16-1" aria-hidden="true" tabindex="-1"></a>import pyodbc</span>
+<span id="cb16-2"><a href="most-used-tables.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="most-used-tables.html#cb16-3" aria-hidden="true" tabindex="-1"></a>params<span class="ot">=</span> <span class="fu">urllib.parse.quote_plus</span>(<span class="st">&quot;DRIVER={SQL Server};SERVER=msdwvd-tlctxy01.csc.nycnet;DATABASE=TLC_Policy_Programs_Dev;Trusted_Connection=yes&quot;</span>)</span>
+<span id="cb16-4"><a href="most-used-tables.html#cb16-4" aria-hidden="true" tabindex="-1"></a>engine <span class="ot">=</span> <span class="fu">create_engine</span>(<span class="st">&quot;mssql+pyodbc:///?odbc_connect=%s&quot;</span> % params)</span>
+<span id="cb16-5"><a href="most-used-tables.html#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="most-used-tables.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="most-used-tables.html#cb16-7" aria-hidden="true" tabindex="-1"></a>sql <span class="ot">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb16-8"><a href="most-used-tables.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT * </span></span>
+<span id="cb16-9"><a href="most-used-tables.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="st">FROM [TLC_Policy_Programs_Dev].[dbo].[high_volume_indicators_weekly_financials]</span></span>
+<span id="cb16-10"><a href="most-used-tables.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">    &#39;&#39;&#39;</span></span>
+<span id="cb16-11"><a href="most-used-tables.html#cb16-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-12"><a href="most-used-tables.html#cb16-12" aria-hidden="true" tabindex="-1"></a>test <span class="ot">=</span> <span class="fu">pd.read_sql_query</span>(sql, engine)</span></code></pre></div>
+<p>The data dictionaries for the majority of tables in the Datawarehouse are in here:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="most-used-tables.html#cb17-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_M3trics2\automation\data_dictionaries</span></code></pre></div>
+<p>There is also a standardization guide for creating tables and views in the warehouse. You can access it here:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="most-used-tables.html#cb18-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_DA<span class="sc">&amp;</span>E_\Nikita\Supporting_docs</span></code></pre></div>
+</div>
+<div id="tables" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Tables</h2>
+<p>There are many useful tables in the Datawarehouse. I recommend going through the documentation folder to get accustomed with some of them. I would like to list top 5 most used tables in this document though:</p>
+<ul>
+<li><strong>industry_indicators_daily_trips</strong>
+<ul>
+<li>This table goes back to 2014 (inclusive) for yellow and green, and to 2015 for fhvs. It contains trip counts aggregated by day, split by every industry.</li>
+<li>Database: TLC_Policy_Programs_Dev</li>
+<li>Note: This table will save you a ton of time.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="most-used-tables.html#cb19-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="fu">TOP</span> (<span class="dv">1000</span>) [period_start]</span>
+<span id="cb19-2"><a href="most-used-tables.html#cb19-2" aria-hidden="true" tabindex="-1"></a>      ,[period_end]</span>
+<span id="cb19-3"><a href="most-used-tables.html#cb19-3" aria-hidden="true" tabindex="-1"></a>      ,[metric_day]</span>
+<span id="cb19-4"><a href="most-used-tables.html#cb19-4" aria-hidden="true" tabindex="-1"></a>      ,[industry]</span>
+<span id="cb19-5"><a href="most-used-tables.html#cb19-5" aria-hidden="true" tabindex="-1"></a>      ,[count_trips]</span>
+<span id="cb19-6"><a href="most-used-tables.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[industry_indicators_daily_trips]</span></code></pre></div>
+<ul>
+<li><strong>data_reports_monthly_indicators_all</strong>
+<ul>
+<li>These are a set of published metrics here that are updated every month and reviewed with the commissioner before updating. They cover a myriad of relevant metrics for certain industries we regulate.</li>
+<li>Database: TLC_Policy_Programs_Dev</li>
+<li>Note: Serves as a base for the monthly indicators that we publish to our website.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="most-used-tables.html#cb20-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="fu">TOP</span> (<span class="dv">1000</span>) [Month_Year]</span>
+<span id="cb20-2"><a href="most-used-tables.html#cb20-2" aria-hidden="true" tabindex="-1"></a>      ,[License_Class]</span>
+<span id="cb20-3"><a href="most-used-tables.html#cb20-3" aria-hidden="true" tabindex="-1"></a>      ,[Trips_Per_Day]</span>
+<span id="cb20-4"><a href="most-used-tables.html#cb20-4" aria-hidden="true" tabindex="-1"></a>      ,[Farebox_Per_Day]</span>
+<span id="cb20-5"><a href="most-used-tables.html#cb20-5" aria-hidden="true" tabindex="-1"></a>      ,[Unique_Drivers]</span>
+<span id="cb20-6"><a href="most-used-tables.html#cb20-6" aria-hidden="true" tabindex="-1"></a>      ,[Unique_Vehicles]</span>
+<span id="cb20-7"><a href="most-used-tables.html#cb20-7" aria-hidden="true" tabindex="-1"></a>      ,[Vehicles_Per_Day]</span>
+<span id="cb20-8"><a href="most-used-tables.html#cb20-8" aria-hidden="true" tabindex="-1"></a>      ,[Avg_Days_Vehicles_on_Road]</span>
+<span id="cb20-9"><a href="most-used-tables.html#cb20-9" aria-hidden="true" tabindex="-1"></a>      ,[Avg_Hours_Per_Day_Per_Vehicle]</span>
+<span id="cb20-10"><a href="most-used-tables.html#cb20-10" aria-hidden="true" tabindex="-1"></a>      ,[Avg_Days_Drivers_on_Road]</span>
+<span id="cb20-11"><a href="most-used-tables.html#cb20-11" aria-hidden="true" tabindex="-1"></a>      ,[Avg_Hours_Per_Day_Per_Driver]</span>
+<span id="cb20-12"><a href="most-used-tables.html#cb20-12" aria-hidden="true" tabindex="-1"></a>      ,[Avg_Minutes_Per_Trip]</span>
+<span id="cb20-13"><a href="most-used-tables.html#cb20-13" aria-hidden="true" tabindex="-1"></a>      ,[Percent_of_Trips_Paid_with_Credit_Card]</span>
+<span id="cb20-14"><a href="most-used-tables.html#cb20-14" aria-hidden="true" tabindex="-1"></a>      ,[Trips_Per_Day_Shared]</span>
+<span id="cb20-15"><a href="most-used-tables.html#cb20-15" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[data_reports_monthly_indicators_all]</span></code></pre></div>
+<ul>
+<li><strong>high_volume_indicators_weekly_financials</strong>
+<ul>
+<li>These are a set of metrics we created to track driver income on a Monday to Sunday weekly schedule.</li>
+<li>Database: TLC_Policy_Programs_Dev</li>
+<li>Note: Created in a python script they piggyback off utilization to come up with our best estimate on high volume driver income.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="most-used-tables.html#cb21-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="fu">TOP</span> (<span class="dv">1000</span>) [date]</span>
+<span id="cb21-2"><a href="most-used-tables.html#cb21-2" aria-hidden="true" tabindex="-1"></a>      ,[metric_week]</span>
+<span id="cb21-3"><a href="most-used-tables.html#cb21-3" aria-hidden="true" tabindex="-1"></a>      ,[aggregate_pay]</span>
+<span id="cb21-4"><a href="most-used-tables.html#cb21-4" aria-hidden="true" tabindex="-1"></a>      ,[aggregate_hours]</span>
+<span id="cb21-5"><a href="most-used-tables.html#cb21-5" aria-hidden="true" tabindex="-1"></a>      ,[aggregate_hourly_pay]</span>
+<span id="cb21-6"><a href="most-used-tables.html#cb21-6" aria-hidden="true" tabindex="-1"></a>      ,[median_total_pay]</span>
+<span id="cb21-7"><a href="most-used-tables.html#cb21-7" aria-hidden="true" tabindex="-1"></a>      ,[median_logon_hours]</span>
+<span id="cb21-8"><a href="most-used-tables.html#cb21-8" aria-hidden="true" tabindex="-1"></a>      ,[median_hourly_pay]</span>
+<span id="cb21-9"><a href="most-used-tables.html#cb21-9" aria-hidden="true" tabindex="-1"></a>      ,[driver_count]</span>
+<span id="cb21-10"><a href="most-used-tables.html#cb21-10" aria-hidden="true" tabindex="-1"></a>      ,[pay_per_driver]</span>
+<span id="cb21-11"><a href="most-used-tables.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[high_volume_indicators_weekly_financials]</span>
+<span id="cb21-12"><a href="most-used-tables.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  order by metric_week desc</span></code></pre></div>
+<ul>
+<li><strong>industry_zone_indicators_monthly_pickups</strong>
+<ul>
+<li>Count of pickups split by month, industry, and taxi zone (265).</li>
+<li>Database: TLC_Policy_Programs_Dev</li>
+<li>Note: This table will save you a ton of time.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="most-used-tables.html#cb22-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="fu">TOP</span> (<span class="dv">1000</span>) [period_start]</span>
+<span id="cb22-2"><a href="most-used-tables.html#cb22-2" aria-hidden="true" tabindex="-1"></a>      ,[period_end]</span>
+<span id="cb22-3"><a href="most-used-tables.html#cb22-3" aria-hidden="true" tabindex="-1"></a>      ,[metric_month]</span>
+<span id="cb22-4"><a href="most-used-tables.html#cb22-4" aria-hidden="true" tabindex="-1"></a>      ,[industry]</span>
+<span id="cb22-5"><a href="most-used-tables.html#cb22-5" aria-hidden="true" tabindex="-1"></a>      ,[zone]</span>
+<span id="cb22-6"><a href="most-used-tables.html#cb22-6" aria-hidden="true" tabindex="-1"></a>      ,[count_pickups]</span>
+<span id="cb22-7"><a href="most-used-tables.html#cb22-7" aria-hidden="true" tabindex="-1"></a>      ,[count_pickups_shared]</span>
+<span id="cb22-8"><a href="most-used-tables.html#cb22-8" aria-hidden="true" tabindex="-1"></a>      ,[count_pickups_ehail]</span>
+<span id="cb22-9"><a href="most-used-tables.html#cb22-9" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[industry_zone_indicators_monthly_pickups]</span>
+<span id="cb22-10"><a href="most-used-tables.html#cb22-10" aria-hidden="true" tabindex="-1"></a>  order by [metric_month] desc</span></code></pre></div>
+<ul>
+<li><strong>company_indicators_weekly_utilization_even</strong>
+<ul>
+<li>Driver utilization is calculated and loaded into our policy dev server. It is currently run unweighted, meaning that app logon time which is the denominator in this calculation is evenly split for apps a driver is logged into simultaneously.</li>
+<li>Database: TLC_Policy_Programs_Dev</li>
+<li>Note: Note that every nth time a year we re-evaluate utilization publicly as per the law – legal can provide more assistance on the timeline as Ryan wrote the rules.</li>
+<li>Sample pull:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="most-used-tables.html#cb23-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="fu">TOP</span> (<span class="dv">1000</span>) [period_start]</span>
+<span id="cb23-2"><a href="most-used-tables.html#cb23-2" aria-hidden="true" tabindex="-1"></a>      ,[period_end]</span>
+<span id="cb23-3"><a href="most-used-tables.html#cb23-3" aria-hidden="true" tabindex="-1"></a>      ,[metric_week]</span>
+<span id="cb23-4"><a href="most-used-tables.html#cb23-4" aria-hidden="true" tabindex="-1"></a>      ,[company]</span>
+<span id="cb23-5"><a href="most-used-tables.html#cb23-5" aria-hidden="true" tabindex="-1"></a>      ,[sum_cruising_seconds]</span>
+<span id="cb23-6"><a href="most-used-tables.html#cb23-6" aria-hidden="true" tabindex="-1"></a>      ,[sum_passenger_seconds]</span>
+<span id="cb23-7"><a href="most-used-tables.html#cb23-7" aria-hidden="true" tabindex="-1"></a>      ,[pct_utilization]</span>
+<span id="cb23-8"><a href="most-used-tables.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  FROM [TLC_Policy_Programs_Dev].[dbo].[company_indicators_weekly_utilization_even]</span></code></pre></div>
+<p>This section will be developed more in the future.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="other-teams-contacts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="major-projects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
