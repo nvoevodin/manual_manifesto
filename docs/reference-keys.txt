@@ -28,10 +28,10 @@ legal
 pr
 external-affairs
 hr
-lic-licensing-and-courts
+lic-licensing-and-court
 data-analytics
 prosecution
-queens-inspection-and-enforcement
+se-safety-and-emissions-tlc-police
 data-analytics-1
 most-used-tables
 traditional-data
@@ -43,5 +43,5 @@ data-reports---monthly-indicators
 driver-utilization-data
 tlc-data-hub
 raw-trip-records-publishing
-recurring-tasks-ex
+data-tasks-spreadsheet
 useful-code-snippets-tricks
