@@ -44,4 +44,10 @@ driver-utilization-data
 tlc-data-hub
 raw-trip-records-publishing
 data-tasks-spreadsheet
+interesting-projects-up-for-grabs
+tlc-open-data-coordinator
+tlc-data-blog
+tlc-data-meetup
 useful-code-snippets-tricks
+r-package-installer
+fst-data-format

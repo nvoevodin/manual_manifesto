@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual</title>
+  <title>Chapter 10 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual</title>
   <meta name="description" content="Data Team Manifesto." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual" />
+  <meta property="og:title" content="Chapter 10 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual" />
+  <meta name="twitter:title" content="Chapter 10 Useful Code Snippets &amp; Tricks | Data Analytics &amp; Engineering Team Manual" />
   
   <meta name="twitter:description" content="Data Team Manifesto." />
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-12-01" />
+<meta name="date" content="2021-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="major-projects.html"/>
+<link rel="prev" href="interesting-projects-up-for-grabs.html"/>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -199,7 +199,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5" data-path="major-projects.html"><a href="major-projects.html#raw-trip-records-publishing"><i class="fa fa-check"></i><b>8.5</b> Raw Trip Records publishing</a></li>
 <li class="chapter" data-level="8.6" data-path="major-projects.html"><a href="major-projects.html#data-tasks-spreadsheet"><i class="fa fa-check"></i><b>8.6</b> Data Tasks Spreadsheet</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>9</b> Useful Code Snippets &amp; Tricks</a></li>
+<li class="chapter" data-level="9" data-path="interesting-projects-up-for-grabs.html"><a href="interesting-projects-up-for-grabs.html"><i class="fa fa-check"></i><b>9</b> Interesting Projects Up for Grabs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="interesting-projects-up-for-grabs.html"><a href="interesting-projects-up-for-grabs.html#tlc-open-data-coordinator"><i class="fa fa-check"></i><b>9.1</b> TLC Open Data Coordinator</a></li>
+<li class="chapter" data-level="9.2" data-path="interesting-projects-up-for-grabs.html"><a href="interesting-projects-up-for-grabs.html#tlc-data-blog"><i class="fa fa-check"></i><b>9.2</b> TLC Data Blog</a></li>
+<li class="chapter" data-level="9.3" data-path="interesting-projects-up-for-grabs.html"><a href="interesting-projects-up-for-grabs.html#tlc-data-meetup"><i class="fa fa-check"></i><b>9.3</b> TLC Data Meetup</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html"><i class="fa fa-check"></i><b>10</b> Useful Code Snippets &amp; Tricks</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#r-package-installer"><i class="fa fa-check"></i><b>10.1</b> R Package Installer</a></li>
+<li class="chapter" data-level="10.2" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#fst-data-format"><i class="fa fa-check"></i><b>10.2</b> FST data format</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -220,17 +230,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="useful-code-snippets-tricks" class="section level1" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Useful Code Snippets &amp; Tricks</h1>
-<p>TBD</p>
+<div id="useful-code-snippets-tricks" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Useful Code Snippets &amp; Tricks</h1>
+<div id="r-package-installer" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> R Package Installer</h2>
+<p>It can be annoying to install package by package when you first setting up your environment. Here is the function that I created that installs and loads a bunch of initial packages for you.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="useful-code-snippets-tricks.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install procedures for relevant R packages---------------------------------------------------------------------</span></span>
+<span id="cb29-2"><a href="useful-code-snippets-tricks.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#author: Nikita Voevedin</span></span>
+<span id="cb29-3"><a href="useful-code-snippets-tricks.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#notes: this script is revisited for updates every month, note that you may have to install a package seperately </span></span>
+<span id="cb29-4"><a href="useful-code-snippets-tricks.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#COPY THIS SCRIPT AND RUN IN RSTUDIO </span></span>
+<span id="cb29-5"><a href="useful-code-snippets-tricks.html#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="useful-code-snippets-tricks.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="do">#######################script that automatically installs all libraries in a vector##############################</span></span>
+<span id="cb29-7"><a href="useful-code-snippets-tricks.html#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="useful-code-snippets-tricks.html#cb29-8" aria-hidden="true" tabindex="-1"></a>installer <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb29-9"><a href="useful-code-snippets-tricks.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( i <span class="cf">in</span> x ){</span>
+<span id="cb29-10"><a href="useful-code-snippets-tricks.html#cb29-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-11"><a href="useful-code-snippets-tricks.html#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>( <span class="sc">!</span><span class="fu">require</span>( i , <span class="at">character.only =</span> <span class="cn">TRUE</span> ) ){</span>
+<span id="cb29-12"><a href="useful-code-snippets-tricks.html#cb29-12" aria-hidden="true" tabindex="-1"></a>      <span class="co">#  If not loading - install</span></span>
+<span id="cb29-13"><a href="useful-code-snippets-tricks.html#cb29-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">install.packages</span>( i , <span class="at">dependencies =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb29-14"><a href="useful-code-snippets-tricks.html#cb29-14" aria-hidden="true" tabindex="-1"></a>      <span class="co">#  Load </span></span>
+<span id="cb29-15"><a href="useful-code-snippets-tricks.html#cb29-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">require</span>(i, <span class="at">character.only =</span> <span class="cn">TRUE</span> )</span>
+<span id="cb29-16"><a href="useful-code-snippets-tricks.html#cb29-16" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb29-17"><a href="useful-code-snippets-tricks.html#cb29-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb29-18"><a href="useful-code-snippets-tricks.html#cb29-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-19"><a href="useful-code-snippets-tricks.html#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="useful-code-snippets-tricks.html#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="do">#########################################################################################################################</span></span>
+<span id="cb29-21"><a href="useful-code-snippets-tricks.html#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="fu">installer</span>( <span class="fu">c</span>(<span class="st">&quot;ggplot2&quot;</span> , <span class="st">&quot;reshape2&quot;</span> , <span class="st">&quot;data.table&quot;</span>, <span class="st">&#39;shiny&#39;</span>, <span class="st">&#39;shinydashboard&#39;</span>, <span class="st">&#39;fasttime&#39;</span>, <span class="st">&#39;lubridate&#39;</span>,</span>
+<span id="cb29-22"><a href="useful-code-snippets-tricks.html#cb29-22" aria-hidden="true" tabindex="-1"></a>             <span class="st">&#39;dplyr&#39;</span>, <span class="st">&#39;httr&#39;</span>, <span class="st">&#39;jsonlite&#39;</span>, <span class="st">&#39;RCurl&#39;</span>, <span class="st">&#39;pbapply&#39;</span>, <span class="st">&#39;tidyverse&#39;</span>, <span class="st">&#39;openxlsx&#39;</span>, <span class="st">&#39;readxl&#39;</span>,</span>
+<span id="cb29-23"><a href="useful-code-snippets-tricks.html#cb29-23" aria-hidden="true" tabindex="-1"></a>             <span class="st">&#39;reshape&#39;</span>, <span class="st">&#39;tidyr&#39;</span>, <span class="st">&#39;plyr&#39;</span>, <span class="st">&#39;ggmap&#39;</span>, <span class="st">&#39;leaflet&#39;</span>, <span class="st">&#39;raster&#39;</span>, <span class="st">&#39;sf&#39;</span>, <span class="st">&#39;rgdal&#39;</span>, <span class="st">&#39;leaflet.extras&#39;</span>,</span>
+<span id="cb29-24"><a href="useful-code-snippets-tricks.html#cb29-24" aria-hidden="true" tabindex="-1"></a>             <span class="st">&#39;remotes&#39;</span>, <span class="st">&#39;stringi&#39;</span>, <span class="st">&#39;shiny&#39;</span>, <span class="st">&#39;rgeos&#39;</span>, <span class="st">&#39;rmapshaper&#39;</span>, <span class="st">&#39;sp&#39;</span>, <span class="st">&#39;echarts4r&#39;</span>, <span class="st">&#39;shinydashboardPlus&#39;</span>,</span>
+<span id="cb29-25"><a href="useful-code-snippets-tricks.html#cb29-25" aria-hidden="true" tabindex="-1"></a>             <span class="st">&#39;shinycssloaders&#39;</span>, <span class="st">&#39;DT&#39;</span>, <span class="st">&#39;mapview&#39;</span>,<span class="st">&#39;parallel&#39;</span>) )</span>
+<span id="cb29-26"><a href="useful-code-snippets-tricks.html#cb29-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-27"><a href="useful-code-snippets-tricks.html#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="do">###########################################################################################################################</span></span></code></pre></div>
+</div>
+<div id="fst-data-format" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> FST data format</h2>
+<p>Although it is ok to use csv and for 90% of our tasks we will be using csvs, if the amount of data is too big and you need faster loading speeds, you can use fst files. Fst files leverage SSD drive speeds and were created by data teams at facebook to speed up read and write times. Since they are native to R, they are easier to read in R. Make sure you have the fst packge installed with the install.packages(“fst”). Below you can see how you read in a file:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="useful-code-snippets-tricks.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fst)</span>
+<span id="cb30-2"><a href="useful-code-snippets-tricks.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb30-3"><a href="useful-code-snippets-tricks.html#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="useful-code-snippets-tricks.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#working directory</span></span>
+<span id="cb30-5"><a href="useful-code-snippets-tricks.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;I:/COF/COF/_M3trics2/records/med&quot;</span>)</span>
+<span id="cb30-6"><a href="useful-code-snippets-tricks.html#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="useful-code-snippets-tricks.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Extracting one day of medallion data</span></span>
+<span id="cb30-8"><a href="useful-code-snippets-tricks.html#cb30-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.fst</span>(<span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;2017-01-01&quot;</span>), <span class="at">as.data.table =</span> T)</span></code></pre></div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="major-projects.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interesting-projects-up-for-grabs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
