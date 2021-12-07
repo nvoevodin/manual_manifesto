@@ -24,7 +24,7 @@
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-12-02" />
+<meta name="date" content="2021-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -210,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#r-package-installer"><i class="fa fa-check"></i><b>10.1</b> R Package Installer</a></li>
 <li class="chapter" data-level="10.2" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#fst-data-format"><i class="fa fa-check"></i><b>10.2</b> FST data format</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="dictionary-and-terminology.html"><a href="dictionary-and-terminology.html"><i class="fa fa-check"></i><b>11</b> Dictionary and Terminology</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -234,16 +237,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 4</span> Data Connections &amp; Access</h1>
 <div id="sql-server" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> SQL Server</h2>
-<p>Our primary data source is the sql server which holds a myriad of data bases each with their own sets of tables accessible through different tools. Currently the teams lean heavily on 3 of the following tools for accessing data from the server:</p>
+<p>Our primary data source is the SQL server, which holds many databases, each with its own sets of tables accessible through different tools. Currently, the teams lean heavily on 3 of the following tools for accessing data from the server:</p>
 <ul>
-<li><p><strong>Sql server management studio</strong></p></li>
+<li><p><strong>SQL Server Management Studio</strong></p></li>
 <li><p><strong>R</strong></p></li>
 <li><p><strong>Python</strong></p></li>
 </ul>
 </div>
 <div id="pertinent-it-databases" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Pertinent IT Databases</h2>
-<p>There area series of databases which we use to collect data. Access to these servers is restricted by your windows profile and a ticket with IT is required to access the database, but talk to your supervisor first to see if there are accessible points already in place before approaching IT.
+<p>There are a series of databases that we use to collect data. Your Windows profile restricts access to these servers, and a ticket with IT is required to access the database, but talk to your supervisor first to see if there are accessible points already in place before approaching IT.
 below are some credentials provided for a few databases:</p>
 <table style="width:100%;">
 <caption><span id="tab:unnamed-chunk-3">Table 4.1: </span>ODBC Connections</caption>
@@ -291,11 +294,11 @@ below are some credentials provided for a few databases:</p>
 </div>
 <div id="open-data-database" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Open Data Database</h2>
-<p>Before we submit data to the city Open Data portal, we store it in the Open Data sql server. If you ever need access to it, contact Nikita Voevodin or Maxim Smolyaninov from IT.</p>
+<p>Before submitting data to the city Open Data portal, we store it in the Open Data SQL server. Contact Nikita Voevodin or Maxim Smolyaninov from IT if you ever need access to it.</p>
 </div>
 <div id="open-data" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Open Data</h2>
-<p>City agencies that work with data are often required to post their data to the city open data portal. It can be very useful to know how to pull data from there. Even for our own data, because different departments publish different datasets, which might not be shared between departments. You can either download the whole datasets as csv, json, or whatever, or you can use their API. They have useful code snippets of how to work with their data in different programming languages. The first thing that you should do though is set up an account and get an api key. Then, you can do somethig like:</p>
+<p>City agencies that work with data are often required to post their data to the city’s open data portal. It can be handy to know how to pull data from there. Even for our data, different departments publish different datasets, which might not be shared between departments. You can either download the whole datasets as CSV, JSON, or whatever, or you can use their API. They have helpful code snippets of working with their data in different programming languages. The first thing you should do is set up an account and get an API key. Then, you can do something like:</p>
 <ul>
 <li><strong>R:</strong></li>
 </ul>
@@ -329,7 +332,7 @@ below are some credentials provided for a few databases:</p>
 </div>
 <div id="proxy-settings" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Proxy Settings</h2>
-<p>At some point you might encounter a proxy problem. That is basically a firewall blocking certain connections from outside. Unfortunately, everything that has to do with installing python or javascript packages is considered undesirable by our firewall and ultimately will be blocked. That is a very annoying issue to deal with for anybody. Fortunately, there is a solution. For most tasks, adding the following proxy settings will fix the problem.</p>
+<p>At some point, you might encounter a proxy problem. That is a firewall blocking certain connections from outside. Unfortunately, everything that has to do with installing python or javascript packages is considered undesirable by our firewall and ultimately will be blocked. That is a very annoying issue to deal with for anybody. Fortunately, there is a solution. For most tasks, adding the following proxy settings will fix the problem.</p>
 <div class="infobox note">
 <p><strong>Open Anaconda -&gt; file -&gt; preferences -&gt; configure Conda</strong>. Paste the following in there (use your username):</p>
 </div>

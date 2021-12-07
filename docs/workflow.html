@@ -24,7 +24,7 @@
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-12-02" />
+<meta name="date" content="2021-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -210,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#r-package-installer"><i class="fa fa-check"></i><b>10.1</b> R Package Installer</a></li>
 <li class="chapter" data-level="10.2" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#fst-data-format"><i class="fa fa-check"></i><b>10.2</b> FST data format</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="dictionary-and-terminology.html"><a href="dictionary-and-terminology.html"><i class="fa fa-check"></i><b>11</b> Dictionary and Terminology</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -234,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Workflow</h1>
 <div id="establishing-a-data-science-environment" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Establishing a Data Science Environment</h2>
-<p>Each analyst operates in their own way however the following setups should be followed in order to leverage collaboration across the team:</p>
+<p>Each analyst operates in their own way; however, the following setups should be followed to leverage collaboration across the team:</p>
 <ul>
 <li><p><strong>Install R, Rstudio &amp; adjacent tools</strong></p>
 <ul>
@@ -258,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p><strong>DataCamp</strong></p>
 <ul>
-<li>TLC maintains a subscription to datacamp for R, Python and more; for membership access speak to your supervisor</li>
+<li>TLC maintains a subscription to the datacamp for R, Python and more; for membership access speak to your supervisor</li>
 </ul></li>
 <li><p><strong>FreeCodeCamp</strong></p>
 <ul>
@@ -285,24 +288,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Create a script</strong> -&gt; <strong>Output a result</strong> -&gt; <strong>Automate the script to run on schedule</strong> -&gt; <strong>document (the what, the how, the when, and the why)</strong></p>
 </div>
 <div class="infobox note">
-<p><strong>Note:</strong> Automation is a judgement call and should be considered the default. If things are ad hoc or to custom based to automate then note that in the documentation. The rule of thumb is: automate when there is a temporal element since this generally means someone will ask for this again.</p>
+<p><strong>Note:</strong> Automation is a judgment call and should be considered the default. Note that in the documentation if things are ad hoc or too custom to automate. The rule of thumb is: automate when there is a temporal element since this generally means someone will ask for this again.</p>
 </div>
 <p>All final reports and analyses should go under the directory below unless otherwise directed:</p>
 <p>I:/COF/COF/<em>DA&amp;E</em>/your_name…</p>
-<p>This folder holds in it other subdirectories which various output files like images, excel documents and other relevant data. The general structure analysts on the analytics team should follow are:</p>
+<p>This folder holds other subdirectories with various output files like images, excel documents, and other relevant data. The general structure analysts on the analytics team should follow are:</p>
 <ul>
 <li><p>Unless otherwise directed, create a folder in your folder and label it with topic words of the project you are working on</p></li>
-<li><p>In that root folder insert your main script, cache any data files in subdirectories, and provide a documentation file. Below is an example:</p></li>
+<li><p>In that root folder, insert your main script, cache any data files in subdirectories, and provide a documentation file. Below is an example:</p></li>
 </ul>
 <div class="figure">
 <img src="my_files/folder_ex.png" alt="" />
 <p class="caption">Folder Example</p>
 </div>
-<p>Note that in the folder we have output files, the main script, and an html report which is meant to help aid in presenting the work. The automate script leverages the taskcheduleR package in R to make the script run every month, this way utilization rates for medallions and shls are updated automatically.</p>
+<p>Note that in the folder, we have output files, the main script, and an HTML report meant to help present the work. The automate script leverages the taskcheduleR package in R to make the script run every month; this way, utilization rates for medallions and shls are updated automatically.</p>
 </div>
 <div id="dashboards-apps" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Dashboards &amp; Apps</h2>
-<p>Currently we are working on standardizing our analyses as best as possible in order to allow for quick servicing of both routine and some ad-hoc requests. As tools become more streamlined we will be able to expand with internal dashboarding tools; at the moment limitation in licensing tools and opensource software acceptance has hindered our ability to use these. Tools which we currently use for dashboarding are:</p>
+<p>Currently, we are working on standardizing our analyses as best as possible to allow for quick servicing of both routine and some ad-hoc requests. As tools become more streamlined, we will be able to expand with internal dashboarding tools; currently, limitation in licensing tools and opensource software acceptance has hindered our ability to use these. Tools which we now use for dashboarding are:</p>
 <ul>
 <li><p><strong>Dashboards</strong></p>
 <ul>
@@ -319,6 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="passwords-usernames-accounts" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Passwords, Usernames, Accounts</h2>
+<p>This sections has the accounts and passwords common to the whole team.</p>
 <p>TBD</p>
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>

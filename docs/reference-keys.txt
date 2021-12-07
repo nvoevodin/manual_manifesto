@@ -1,5 +1,6 @@
 tab:unnamed-chunk-2
 tab:unnamed-chunk-3
+tab:unnamed-chunk-35
 scope
 the-team
 workflow
@@ -51,3 +52,4 @@ tlc-data-meetup
 useful-code-snippets-tricks
 r-package-installer
 fst-data-format
+dictionary-and-terminology

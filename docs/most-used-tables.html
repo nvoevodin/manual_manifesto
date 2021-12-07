@@ -24,7 +24,7 @@
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-12-02" />
+<meta name="date" content="2021-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -210,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#r-package-installer"><i class="fa fa-check"></i><b>10.1</b> R Package Installer</a></li>
 <li class="chapter" data-level="10.2" data-path="useful-code-snippets-tricks.html"><a href="useful-code-snippets-tricks.html#fst-data-format"><i class="fa fa-check"></i><b>10.2</b> FST data format</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="dictionary-and-terminology.html"><a href="dictionary-and-terminology.html"><i class="fa fa-check"></i><b>11</b> Dictionary and Terminology</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -234,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Most Used Tables</h1>
 <div id="traditional-data" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Traditional Data</h2>
-<p>Within the databases that we covered in one of the previous sections are a litany of tables which we access for various purposes. Below is a list of the popular tables we reference with a short description of what they are for. If you have any questions talk to your supervisor.</p>
+<p>Within the databases that we covered in one of the previous sections is a litany of tables that we access for various purposes. Below is a list of the popular tables we reference with a short description of what they are for. If you have any questions, talk to your supervisor.</p>
 <ul>
 <li><strong>FHVHV_TripRecord</strong>
 <ul>
@@ -310,7 +313,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>Fhv_base_list</strong>
 <ul>
-<li>The list of bases. Bases are companies that dipatch trips. The table might not be super useful on its own, but it is super useful when you join it to trip tables to figure out an industry or a company name of a base that dispathced a trip.</li>
+<li>The list of bases. Bases are companies that dispatch trips. The table might not be super helpful on its own, but it is super useful when you join it to trip tables to figure out an industry or a company name of a base that dispatched a trip</li>
 <li>Database: Azure_Trip_Data</li>
 <li>Note: Not a big table. In the example below, look at the last 5 columns.</li>
 <li>Sample pull:</li>
@@ -325,7 +328,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>Tlc_camis_entity</strong>
 <ul>
-<li>A snapshot of all entities (all licensees including but not limited to drivers, vehicles, bases) and pertinent information like license application date, addresses etc.</li>
+<li>A snapshot of all entities (all licensees including but not limited to drivers, vehicles, bases) and pertinent information like the license application date, addresses, etc.<br />
+</li>
 <li>Database: DataWarehouse</li>
 <li>Note: Very important table. We have a very extensive printed documentation for it. Ask your supervisor for it.</li>
 <li>Sample pull: All active drivers</li>
@@ -348,12 +352,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="tlc-datawarehouse" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> TLC Datawarehouse</h2>
-<p>The Data Team, collaborating with IT, built out a data warehouse that automatically aggregates on a set schedule the most often requested data points, drastically increasing the speed with which data can be pulled and analyzed. Most tables in the warehouse update automatically and run on a set schedule. Standard workflow of creating a new table is as follows:</p>
+<p>The Data Team, collaborating with IT, built out a data warehouse that automatically aggregates the most often requested data points on a set schedule, drastically increasing the speed with which data can be pulled and analyzed. Most tables in the warehouse update automatically and run on a set schedule. The standard workflow of creating a new table is as follows:</p>
 <div class="infobox important">
 <ul>
 <li><p>Create a new table with some initial data straight from the SSMS, Python, or R.</p></li>
 <li><p>Create a Stored Procedure script. The goal of that script is to update the table that you created.</p></li>
-<li><p>Create a Job in the SSMS job scheduler. That job will run the Stored Procedure that you created in the step 2 on schedule that you specify.</p></li>
+<li><p>Create a Job in the SSMS job scheduler. That job will run the Stored Procedure you created in step 2 on a specified schedule.</p></li>
 </ul>
 </div>
 <p><strong>Datawarehouse SSMS view:</strong></p>
@@ -361,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="my_files/dw1.PNG" alt="" />
 <p class="caption">Datawarehouse ex</p>
 </div>
-<p>Here is a connection example using R and Python. Note: you must have the ODBC connection set up the way shown in the section 4.2 of this manual.</p>
+<p>Here is a connection example using R and Python. Note: you must have the ODBC connection set up, as shown in section 4.2 of this manual.</p>
 <ul>
 <li><strong>R:</strong></li>
 </ul>
@@ -394,11 +398,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="tables" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Tables</h2>
-<p>There are many useful tables in the Datawarehouse. I recommend going through the documentation folder to get accustomed with some of them. I would like to list top 5 most used tables in this document though:</p>
+<p>There are many valuable tables in the Datawarehouse. I recommend going through the documentation folder to get accustomed to some of them. I want to list the top 5 most used tables in this document, though:</p>
 <ul>
 <li><strong>industry_indicators_daily_trips</strong>
 <ul>
-<li>This table goes back to 2014 (inclusive) for yellow and green, and to 2015 for fhvs. It contains trip counts aggregated by day, split by every industry.</li>
+<li>This table goes back to 2014 (inclusive) for yellow and green and 2015 for fhvs. It contains trip counts aggregated by day, split by every industry.</li>
 <li>Database: TLC_Policy_Programs_Dev</li>
 <li>Note: This table will save you a ton of time.</li>
 <li>Sample pull:</li>
@@ -413,7 +417,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>data_reports_monthly_indicators_all</strong>
 <ul>
-<li>These are a set of published metrics here that are updated every month and reviewed with the commissioner before updating. They cover a myriad of relevant metrics for certain industries we regulate.</li>
+<li>These are a set of published metrics updated every month and reviewed with the commissioner before updating. They cover a myriad of relevant metrics for specific industries we regulate.</li>
 <li>Database: TLC_Policy_Programs_Dev</li>
 <li>Note: Serves as a base for the monthly indicators that we publish to our website.</li>
 <li>Sample pull:</li>

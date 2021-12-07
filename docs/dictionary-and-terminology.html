@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual</title>
+  <title>Chapter 11 Dictionary and Terminology | Data Analytics &amp; Engineering Team Manual</title>
   <meta name="description" content="Data Team Manifesto." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual" />
+  <meta property="og:title" content="Chapter 11 Dictionary and Terminology | Data Analytics &amp; Engineering Team Manual" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Major Projects | Data Analytics &amp; Engineering Team Manual" />
+  <meta name="twitter:title" content="Chapter 11 Dictionary and Terminology | Data Analytics &amp; Engineering Team Manual" />
   
   <meta name="twitter:description" content="Data Team Manifesto." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="most-used-tables.html"/>
-<link rel="next" href="interesting-projects-up-for-grabs.html"/>
+<link rel="prev" href="useful-code-snippets-tricks.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -233,167 +233,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="major-projects" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Major Projects</h1>
-<p>The data team is responsible for a lot of interesting and essential projects. Some of these projects are very important to the agency’s day-to-day operations. Here is an overview of the top 5 most essential data projects. This section is flexible and will be either expanded or shrunk as needed.</p>
-<div id="tlc-datawarehouse-1" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> TLC Datawarehouse</h2>
-<ul>
-<li><strong>What</strong></li>
-</ul>
-<p>Known as our policy dev server, IT provides a database where we store aggregated tables and essential metrics. Every 1-2 weeks, numbers are updated to support policy.</p>
-<ul>
-<li><strong>When</strong></li>
-</ul>
-<p>Ongoing project. Most of the tables in the database are updated automatically following different schedules.</p>
-<ul>
-<li><strong>Where</strong></li>
-</ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="major-projects.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Directories and sources </span></span>
-<span id="cb24-2"><a href="major-projects.html#cb24-2" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_M3trics2\automation </span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="major-projects.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Catalog and data dictionaries here</span></span>
-<span id="cb25-2"><a href="major-projects.html#cb25-2" aria-hidden="true" tabindex="-1"></a>Data science reference<span class="sc">:</span> I<span class="sc">:</span>\COF\COF\_M3trics2\automation\data_dictionaries </span></code></pre></div>
-<ul>
-<li><strong>Who</strong></li>
-</ul>
-<p>Built by the policy analytics team, it is maintained now by Nikita Voevodin with IT support from Maxim Smolyaninov.</p>
-<ul>
-<li><strong>Other</strong></li>
-</ul>
-<p>New tables should be created for requests that are deemed repetitive and automatable.</p>
-</div>
-<div id="data-reports---monthly-indicators" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Data Reports - Monthly Indicators</h2>
-<ul>
-<li><strong>What</strong></li>
-</ul>
-<p>This report is published on open data and our website and is reviewed with the commissioner every month. It includes a lot of relevant data from the traditional FHV bases (trip patterns, vehicle and driver counts, etc.)</p>
-<p>The table published on open data with the following columns: Base License Number, Base Name, DBA, Year, Month, Month Name, Total Dispatched Trips, Total Dispatched Shared Trips, Unique Dispatched Vehicles.</p>
-<ul>
-<li><strong>When</strong></li>
-</ul>
-<p>It is a recurring project. It is updated on the last Monday of each month.</p>
-<ul>
-<li><strong>Where</strong></li>
-</ul>
-<p><a href="https://data.cityofnewyork.us/Transportation/FHV-Base-Aggregate-Report/2v9c-2k7f" class="uri">https://data.cityofnewyork.us/Transportation/FHV-Base-Aggregate-Report/2v9c-2k7f</a></p>
-<ul>
-<li><strong>Who</strong></li>
-</ul>
-<p>Point: Nikita Voevodin runs the updates. Support: IT/ Web Konstantin Onishchenko, PR Alan Fromberg, Rebecca Harshbarger</p>
-<ul>
-<li><strong>Other</strong></li>
-</ul>
-<p>N/A</p>
-</div>
-<div id="driver-utilization-data" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Driver Utilization data</h2>
-<ul>
-<li><strong>What</strong></li>
-</ul>
-<p>Driver utilization is calculated and loaded into our policy data warehouse. It is currently run unweighted, meaning that app logon time which is the denominator in this calculation, is evenly split for apps a driver is logged into simultaneously. Note that every nth time a year, we re-evaluate utilization publicly as per the law – legal can provide more assistance on the timeline as Ryan wrote the rules.</p>
-<ul>
-<li><strong>When</strong></li>
-</ul>
-<p>It is a recurring project. It is updated during the last week of each month.</p>
-<ul>
-<li><strong>Where</strong></li>
-</ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="major-projects.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Metrics</span></span>
-<span id="cb26-2"><a href="major-projects.html#cb26-2" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_M3trics2\automation\data_dictionaries. File<span class="sc">:</span> <span class="st">&quot;company_indicators_weekly_utilization_even&quot;</span></span></code></pre></div>
-<ul>
-<li><strong>Who</strong></li>
-</ul>
-<p>Nikita</p>
-<ul>
-<li><strong>Other</strong></li>
-</ul>
-<p>N/A</p>
-</div>
-<div id="tlc-data-hub" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> TLC Data Hub</h2>
-<ul>
-<li><strong>What</strong></li>
-</ul>
-<p>TLC Data Hub offers users a new and convenient location to access and visualize taxi and for-hire industry data. TLC Data Hub uses public data available on Open Data and the TLC website and does not use, track or display any private information of the drivers or companies. The Hub currently consists of two dashboards. The ‘Trip Viz’ dashboard allows the public to run queries on TLC-collected trip data, while the ‘Industry metrics’ dashboard provides standard visualizations of monthly industry trends.</p>
-<ul>
-<li><strong>When</strong></li>
-</ul>
-<p>This project is on pause for now.</p>
-<ul>
-<li><strong>Where</strong></li>
-</ul>
-<p><a href="https://tlcanalytics.shinyapps.io/dash_test/" class="uri">https://tlcanalytics.shinyapps.io/dash_test/</a></p>
-<ul>
-<li><strong>Who</strong></li>
-</ul>
-<p>Nikita Voevodin is the creator and maintainer of the project.</p>
-<ul>
-<li><strong>Other</strong></li>
-</ul>
-<p>The project was put on pause due to a lack of data updates. It should be switched to monthly updates (parallel to the raw trips publishing timeline) and reinstated.</p>
-</div>
-<div id="raw-trip-records-publishing" class="section level2" number="8.5">
-<h2><span class="header-section-number">8.5</span> Raw Trip Records publishing</h2>
-<ul>
-<li><strong>What</strong>
-Every six months, TLC aims to publicly release the previous six months of raw trip record data on our website and Open Data.</li>
-</ul>
-<p><strong>Process:</strong></p>
-<p>Ticket to Lana to create monthly files</p>
-<p>Review with Chair</p>
-<p>Send Konstantin links for him to stage (they will have predictable names based on month and industry)</p>
-<p>Ticket to Lana to load files to AWS</p>
-<p>Send links to Alex Finkel at DoITT to post to Open Data</p>
-<ul>
-<li><strong>When</strong></li>
-</ul>
-<p>It is a recurring project. It is updated on the first weeks of September and March, Bi-Annually.</p>
-<ul>
-<li><strong>Where</strong></li>
-</ul>
-<p><strong>User Guide:</strong>
-<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/trip_record_user_guide.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/trip_record_user_guide.pdf</a></p>
-<p><strong>Yellow Dictionary:</strong>
-<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf</a><br />
-<strong>Green Dictionary:</strong>
-<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf</a><br />
-<strong>FHV Dictionary:</strong>
-<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_fhv.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_fhv.pdf</a><br />
-<strong>High Volume Dictionary:</strong>
-<a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf" class="uri">https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_hvfhs.pdf</a></p>
-<ul>
-<li><strong>Who</strong></li>
-</ul>
-<p>Point: Nikita Voevodin runs the updates. Support: IT/ Web Konstantin Onishchenko, PR Alan Fromberg, Rebecca Harshbarger</p>
-<ul>
-<li><strong>Support</strong></li>
-</ul>
-<p>IT/Data: Lana Goldenberg, IT/ Web: Konstantin Onishchenko, PR: Alan Fromberg, Rebecca Harshbarger</p>
-<ul>
-<li><strong>Other</strong></li>
-</ul>
-<p>Publish raw trip records monthly on a two-month delay. Reason for 2-month delay: trad fhv bases submit their data with varying delay (4-6 weeks). For reference, the HVFHV delay is 2-3 weeks, yellow and green: 2 weeks. I do not recommend releasing the data as it comes or on different schedules, as the process is very time-consuming. As of now, we release bi-annually. Releasing monthly is x6 the workload. Releasing ‘as it comes’ is x24 the workload. Additionally, releasing on a 2-month delay schedule would allow us to catch submission errors and ensure data integrity.</p>
-</div>
-<div id="data-tasks-spreadsheet" class="section level2" number="8.6">
-<h2><span class="header-section-number">8.6</span> Data Tasks Spreadsheet</h2>
-<p>There are many more tasks that we handle. Some of them are listed in the “Recurring_Tasks” Document located at:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="major-projects.html#cb27-1" aria-hidden="true" tabindex="-1"></a>I<span class="sc">:</span>\COF\COF\_DA<span class="sc">&amp;</span>E_\Nikita\Reports\Task_spreadsheet</span></code></pre></div>
-<div class="figure">
-<img src="my_files/recurring_tasks.png" alt="" />
-<p class="caption">Recurring tasks ex</p>
-</div>
-<hr />
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-</div>
+<div id="dictionary-and-terminology" class="section level1" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Dictionary and Terminology</h1>
+<p>TLC hosts tons of data points, and it is not always clear what’s what. You will spend a substantial amount of time figuring out different codes, terms, and abbreviations. This section should make it a little easier and serve as an introductory data dictionary for you.</p>
+<table class=" lightable-paper lightable-striped" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-35">Table 11.1: </span>Data Dictionary
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="7">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>General</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Camis Id
+</td>
+<td style="text-align:left;">
+Unique identifier in Camis_Entity table
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Tpep
+</td>
+<td style="text-align:left;">
+Yellow Taxis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Lpep
+</td>
+<td style="text-align:left;">
+Green Cabs
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+HVFHV
+</td>
+<td style="text-align:left;">
+High Volume companies (Uber, Lyft)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+FHV (Traditional)
+</td>
+<td style="text-align:left;">
+Liveries, Black cars, Limos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Medallions
+</td>
+<td style="text-align:left;">
+Yellow Taxis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+SHL
+</td>
+<td style="text-align:left;">
+Green Cabs
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Company Codes</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+HV0002
+</td>
+<td style="text-align:left;">
+JUNO
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+HV0003
+</td>
+<td style="text-align:left;">
+UBER
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+HV0004
+</td>
+<td style="text-align:left;">
+VIA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+HV0005
+</td>
+<td style="text-align:left;">
+LYFT
+</td>
+</tr>
+</tbody>
+</table>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="most-used-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interesting-projects-up-for-grabs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="useful-code-snippets-tricks.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -424,7 +390,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
 "text": "Edit"
 },
 "history": {
