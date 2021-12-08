@@ -24,7 +24,7 @@
 <meta name="author" content="Nikita Voevodin: Senior Data Engineer" />
 
 
-<meta name="date" content="2021-12-07" />
+<meta name="date" content="2021-12-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">TLC Data Manual</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Scope</a></li>
@@ -147,7 +147,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="workflow.html"><a href="workflow.html#professional-development"><i class="fa fa-check"></i><b>3.2</b> Professional Development</a></li>
 <li class="chapter" data-level="3.3" data-path="workflow.html"><a href="workflow.html#metrics-analytics-automation"><i class="fa fa-check"></i><b>3.3</b> Metrics, Analytics &amp; Automation</a></li>
 <li class="chapter" data-level="3.4" data-path="workflow.html"><a href="workflow.html#dashboards-apps"><i class="fa fa-check"></i><b>3.4</b> Dashboards &amp; Apps</a></li>
-<li class="chapter" data-level="3.5" data-path="workflow.html"><a href="workflow.html#passwords-usernames-accounts"><i class="fa fa-check"></i><b>3.5</b> Passwords, Usernames, Accounts</a></li>
+<li class="chapter" data-level="3.5" data-path="workflow.html"><a href="workflow.html#passwords-usernames-accounts"><i class="fa fa-check"></i><b>3.5</b> Passwords, Usernames, Accounts</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="workflow.html"><a href="workflow.html#gmail"><i class="fa fa-check"></i><b>3.5.1</b> Gmail</a></li>
+<li class="chapter" data-level="3.5.2" data-path="workflow.html"><a href="workflow.html#github"><i class="fa fa-check"></i><b>3.5.2</b> Github</a></li>
+<li class="chapter" data-level="3.5.3" data-path="workflow.html"><a href="workflow.html#shinyio"><i class="fa fa-check"></i><b>3.5.3</b> shinyio</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-connections-access.html"><a href="data-connections-access.html"><i class="fa fa-check"></i><b>4</b> Data Connections &amp; Access</a>
 <ul>
@@ -236,9 +241,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="dictionary-and-terminology" class="section level1" number="11">
 <h1><span class="header-section-number">Chapter 11</span> Dictionary and Terminology</h1>
 <p>TLC hosts tons of data points, and it is not always clear what’s what. You will spend a substantial amount of time figuring out different codes, terms, and abbreviations. This section should make it a little easier and serve as an introductory data dictionary for you.</p>
-<table class=" lightable-paper lightable-striped" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper lightable-striped" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
 <caption>
-<span id="tab:unnamed-chunk-35">Table 11.1: </span>Data Dictionary
+<span id="tab:unnamed-chunk-38">Table 11.1: </span>Data Dictionary
 </caption>
 <thead>
 <tr>
@@ -251,7 +256,7 @@ Description
 </tr>
 </thead>
 <tbody>
-<tr grouplength="7">
+<tr grouplength="10">
 <td colspan="2" style="border-bottom: 1px solid;">
 <strong>General</strong>
 </td>
@@ -312,6 +317,30 @@ SHL
 Green Cabs
 </td>
 </tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WAV
+</td>
+<td style="text-align:left;">
+Wheelchair Accessible Vehicle
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+AAR
+</td>
+<td style="text-align:left;">
+Access-A-Ride
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+EHAIL
+</td>
+<td style="text-align:left;">
+Yellow Taxis dispatched through an app
+</td>
+</tr>
 <tr grouplength="4">
 <td colspan="2" style="border-bottom: 1px solid;">
 <strong>Company Codes</strong>
@@ -349,8 +378,49 @@ HV0005
 LYFT
 </td>
 </tr>
+<tr grouplength="4">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Financial</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Farebox
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Congestion Surcharge
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+MTA Tax
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Improvement Surcharge
+</td>
+<td style="text-align:left;">
+<ul>
+<li></td>
+</tr>
 </tbody>
-</table>
+</table></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 
 </div>
             </section>

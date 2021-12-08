@@ -1,3 +1,7 @@
+
+
+
+
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -92,4 +96,8 @@ h1.title {
 }
 .book .book-body .page-wrapper .page-inner section.normal pre a {
   color: inherit;
+}
+
+.book .book-body .page-wrapper {
+    background: #316473;
 }
